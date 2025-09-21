@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from "react";
 
 export default function SectionMensaje() {
   const videoRef = useRef(null);
-  const [isPaused, setIsPaused] = useState(false);
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
 
   // Honor the user's reduced-motion setting and stop playback if necessary.
@@ -16,9 +15,6 @@ export default function SectionMensaje() {
     const handleChange = (event) => {
       const prefers = event.matches;
       setPrefersReducedMotion(prefers);
-      if (prefers) {
-        setIsPaused(true);
-      }
     };
 
     handleChange(mediaQuery);
@@ -27,14 +23,14 @@ export default function SectionMensaje() {
     return () => mediaQuery.removeEventListener("change", handleChange);
   }, []);
 
-  // Keep the video element in sync with the play/pause toggle.
+  // Respect reduced-motion preference.
   useEffect(() => {
     const video = videoRef.current;
     if (!video) {
       return;
     }
 
-    if (isPaused) {
+    if (prefersReducedMotion) {
       video.pause();
       return;
     }
@@ -42,14 +38,10 @@ export default function SectionMensaje() {
     const playPromise = video.play();
     if (playPromise instanceof Promise) {
       playPromise.catch(() => {
-        setIsPaused(true);
+        // ignore autoplay rejection silently
       });
     }
-  }, [isPaused]);
-
-  const handleTogglePlayback = () => {
-    setIsPaused((prev) => !prev);
-  };
+  }, [prefersReducedMotion]);
 
   return (
     <section
@@ -80,27 +72,6 @@ export default function SectionMensaje() {
           “La distancia fue la prueba, <br className="hidden sm:block" />
           el amor fue la respuesta”
         </p>
-
-        <button
-          type="button"
-          onClick={handleTogglePlayback}
-          className="mt-8 inline-flex h-12 w-12 items-center justify-center rounded-full border border-[var(--brand-cream)]/70 bg-[color:rgb(15_51_28_/_0.65)] text-lg text-[var(--brand-cream)] transition hover:bg-[color:rgb(15_51_28_/_0.85)] focus-no-outline focus-soft hover-brand-sage"
-          aria-label={isPaused ? "Reproducir video de fondo" : "Pausar video de fondo"}
-        >
-          <span aria-hidden className="flex h-5 w-5 items-center justify-center">
-            {isPaused ? (
-              <span className="ml-[1px] text-base">▶</span>
-            ) : (
-              <span className="flex gap-[3px]">
-                <span className="block h-4 w-0.5 rounded-sm bg-[var(--brand-cream)]" />
-                <span className="block h-4 w-0.5 rounded-sm bg-[var(--brand-cream)]" />
-              </span>
-            )}
-          </span>
-          <span className="sr-only">
-            {isPaused ? "Reproducir" : "Pausar"}
-          </span>
-        </button>
 
         {prefersReducedMotion && (
           <p className="mt-4 text-sm text-[var(--brand-cream)]/80">
