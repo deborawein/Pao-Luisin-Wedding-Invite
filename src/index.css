@@ -20,6 +20,12 @@ body {
   --brand-cream:   #F6E9C7;  /* light bg */
   --paper:         #FFF8E9;  /* very light */
   --ink:           #0F331C;  /* text on light */
+  --focus-ring:    #F0C987;  /* accessible outline */
+}
+
+:where(a, button):focus-visible {
+  outline: 3px solid var(--focus-ring);
+  outline-offset: 3px;
 }
 
 /* Utility */

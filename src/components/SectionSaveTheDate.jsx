@@ -1,5 +1,4 @@
 // SectionSaveTheDate.jsx
-import React from "react";
 import { useEffect, useState } from "react";
 import Photo from "/saveTheDate.jpg";
 
@@ -46,7 +45,7 @@ export default function SectionSaveTheDate() {
         {/* overlay behind content */}
         <div className="absolute inset-0 -z-30 bg-[var(--brand-deep)]" />
         {/* content above overlay */}
-        <div className="relative z-10 mx-auto max-w-6xl px-6 md:px-10 lg:px-12 py-12 md:py-20 text-center text-[var(--brand-cafe)]">
+        <div className="relative z-10 mx-auto max-w-6xl px-6 md:px-10 lg:px-12 py-12 md:py-20 text-center text-[var(--brand-cream)]">
           <h3 className="text-[8vw] md:text-4xl mb-3 font-halimum">Faltan</h3>
           <Countdown targetISO={EVENT_ISO} />
           <p className="mt-4 text-base md:text-xl">SÁBADO 10 DE ENERO DE 2026</p>
@@ -57,22 +56,12 @@ export default function SectionSaveTheDate() {
 }
 /* ---------- Countdown (fits narrow screens) ---------- */
 function Countdown({ targetISO }) {
-  const getLeft = () => {
-    const now = new Date();
-    const target = new Date(targetISO);
-    const diff = Math.max(0, target - now);
-    const d = Math.floor(diff / 86_400_000);
-    const h = Math.floor((diff / 3_600_000) % 24);
-    const m = Math.floor((diff / 60_000) % 60);
-    const s = Math.floor((diff / 1_000) % 60);
-    return { d, h, m, s };
-  };
-
-  const [left, setLeft] = React.useState(getLeft());
-  React.useEffect(() => {
-    const id = setInterval(() => setLeft(getLeft()), 1000);
+  const [left, setLeft] = useState(() => getLeft(targetISO));
+  useEffect(() => {
+    const tick = () => setLeft(getLeft(targetISO));
+    const id = setInterval(tick, 1000);
     return () => clearInterval(id);
-  }, []);
+  }, [targetISO]);
 
   return (
     <div className="mt-2 w-full flex justify-center">
@@ -105,6 +94,17 @@ function Countdown({ targetISO }) {
   );
 }
 
+function getLeft(targetISO) {
+  const now = new Date();
+  const target = new Date(targetISO);
+  const diff = Math.max(0, target - now);
+  const d = Math.floor(diff / 86_400_000);
+  const h = Math.floor((diff / 3_600_000) % 24);
+  const m = Math.floor((diff / 60_000) % 60);
+  const s = Math.floor((diff / 1_000) % 60);
+  return { d, h, m, s };
+}
+
 function Number({ value, width = 2, faded = false }) {
   const txt = String(value).padStart(width, "0");
   return (
@@ -113,7 +113,7 @@ function Number({ value, width = 2, faded = false }) {
         "row-start-1 self-end font-light leading-none text-center",
         // shrink on tiny screens, grow on larger — stays within width
         "text-[clamp(18px,7.2vw,48px)] md:text-6xl lg:text-7xl",
-        faded ? "text-[var(--ink)]/65" : "text-[var(--paper)]",
+        faded ? "text-[var(--brand-cream)]/65" : "text-[var(--paper)]",
       ].join(" ")}
       style={{
         fontVariantNumeric: "tabular-nums",
@@ -131,7 +131,7 @@ function Colon({ faded = false }) {
       className={[
         "row-start-1 self-end text-center leading-none",
         "text-[clamp(16px,6.2vw,44px)] md:text-5xl lg:text-6xl",
-        faded ? "text-[var(--ink)]/55" : "text-[var(--paper)]",
+        faded ? "text-[var(--brand-cream)]/55" : "text-[var(--paper)]",
       ].join(" ")}
     >
       :
@@ -147,7 +147,7 @@ function Label({ text, col, faded = false }) {
         "uppercase",
         "tracking-[0.25em] md:tracking-[0.3em]",
         "text-[10px] max-[360px]:text-[9px] md:text-sm",
-        faded ? "text-[var(--ink)]/55" : "text-[var(--paper)]",
+        faded ? "text-[var(--brand-cream)]/55" : "text-[var(--paper)]",
       ].join(" ")}
       style={{ gridColumnStart: col }}
     >

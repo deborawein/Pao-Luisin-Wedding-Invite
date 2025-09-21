@@ -1,5 +1,5 @@
 // App.jsx
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import LogoLine from "./assets/logo2.svg";
 import SectionQuoteVideo from "./components/SectionQuoteVideo";
 import SectionStart from "./components/SectionStart";
@@ -11,6 +11,32 @@ import SectionEnd from "./components/SectionEnd";
 
 export default function App() {
   const [open, setOpen] = useState(false);
+  const toggleRef = useRef(null);
+  const firstLinkRef = useRef(null);
+
+  useEffect(() => {
+    if (!open) {
+      return undefined;
+    }
+
+    const handleKeyDown = (event) => {
+      if (event.key === "Escape") {
+        event.preventDefault();
+        setOpen(false);
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [open]);
+
+  useEffect(() => {
+    if (open) {
+      firstLinkRef.current?.focus();
+    } else {
+      toggleRef.current?.focus();
+    }
+  }, [open]);
 
   return (
     <div className="relative h-screen flex flex-col">
@@ -19,7 +45,10 @@ export default function App() {
 
       {/* ===== Full-screen blur/dim overlay (below menu/UI, above content) ===== */}
       <button
+        type="button"
         aria-hidden={!open}
+        aria-label="Cerrar menú"
+        tabIndex={open ? 0 : -1}
         onClick={() => setOpen(false)}
         className={[
           "fixed inset-0 z-40",            // sits under the nav/menu (which will be z-50)
@@ -42,7 +71,7 @@ export default function App() {
         style={{ scrollbarGutter: "stable" }}
       > */}
         {/* STICKY NAV inside the scroll container */}
-        <nav className="sticky top-0 z-50 h-16 text-[var(--paper)]">
+        <nav className="sticky top-0 z-50 h-16 text-[var(--paper)] bg-[color:rgb(15_51_28_/_0.9)] backdrop-blur-sm">
           <div className="relative z-50 flex items-center justify-between px-4 py-3">
             <a href="#sectionStart" className="flex items-center" onClick={() => setOpen(false)}>
               <img src={LogoLine} alt="Pao & Luisin" className="h-8 w-auto sm:h-10" />
@@ -55,6 +84,7 @@ export default function App() {
               aria-expanded={open}
               aria-controls="main-menu"
               onClick={() => setOpen(v => !v)}
+              ref={toggleRef}
               className="relative z-50 h-10 w-10 grid place-items-center"
             >
               <span className={[
@@ -84,7 +114,7 @@ export default function App() {
             ].join(" ")}
           >
             <div className="flex flex-col items-center py-4 space-y-2">
-              {[
+              {[ 
                 ["Top", "#sectionStart"],
                 ["Invite", "#sectionSaveTheDate"],
                 ["Message", "#sectionQuoteVideo"],
@@ -97,6 +127,8 @@ export default function App() {
                   key={href}
                   href={href}
                   onClick={() => setOpen(false)}
+                  ref={href === "#sectionStart" ? firstLinkRef : undefined}
+                  role="menuitem"
                   className="w-full text-center py-2 hover:underline uppercase tracking-[0.35em] text-sm"
                 >
                   {label}
