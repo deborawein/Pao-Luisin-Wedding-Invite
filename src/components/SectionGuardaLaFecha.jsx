@@ -1,12 +1,12 @@
-// SectionSaveTheDate.jsx
+// SectionGuardaLaFecha.jsx
 import { useEffect, useState } from "react";
 import Photo from "/saveTheDate.jpg";
 
-export default function SectionSaveTheDate() {
+export default function SectionGuardaLaFecha() {
   const EVENT_ISO = "2026-01-10T00:00:00-05:00";
 
   return (
-    <section id="sectionSaveTheDate" className="bg-[var(--brand-cream)]/70">
+    <section id="sectionGuardaLaFecha" className="bg-[var(--brand-cream)]/70">
       <div
         className="mx-auto max-w-6xl px-6 md:px-10 lg:px-12 pt-16 pb-12 md:py-20 grid md:grid-cols-2 gap-10 items-center justify-items-center md:justify-items-stretch"
       >

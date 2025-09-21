@@ -1,10 +1,10 @@
-// SectionStart.jsx
+// SectionInicio.jsx
 import Logo from "../assets/logo.svg";
 
-export default function SectionStart() {
+export default function SectionInicio() {
     return (
         <section
-            id="sectionStart"
+            id="sectionInicio"
             className="relative min-h-[100dvh] -mt-16 pt-16 grid place-items-center bg-cover bg-center text-mainbeige"
             style={{ backgroundImage: "url('/src/assets/cover.jpg')" }}
         >

@@ -1,6 +1,6 @@
 import { Fragment } from "react";
 
-export default function SectionItinerary() {
+export default function SectionAgenda() {
   // Details shown on the itinerary cards.
   const events = [
     {
@@ -88,12 +88,15 @@ export default function SectionItinerary() {
   ];
 
   return (
-    <section id="sectionItinerary" className="bg-[var(--brand-sage)]/50 text-[var(--ink)]">
+    <section id="sectionAgenda" className="bg-[var(--brand-sage)]/50 text-[var(--ink)]">
       <div className="itin-wrap mx-auto max-w-3xl md:max-w-6xl px-6">
         <div className="mobile-itinerary md:!hidden">
           {events.map((event) => (
-            <article key={event.title} className="itinerary-item">
-              <h3 className="text-2xl uppercase tracking-[0.2em]">{event.title}</h3>
+            <article
+              key={event.title}
+              className="itinerary-item rounded-3xl bg-[var(--brand-cream)]/90 px-6 py-8 shadow-lg shadow-black/10"
+            >
+              <h3 className="text-2xl uppercase tracking-[0.25em] text-[var(--brand-deep)]">{event.title}</h3>
               <img
                 src={event.img}
                 alt={event.venueScript}
@@ -128,9 +131,11 @@ export default function SectionItinerary() {
               {events.map((event) => (
                 <div
                   key={`${row.key}-${event.title}`}
-                  className={row.cellClass ?? "flex items-center justify-center text-center h-full"}
+                  className={["flex h-full w-full", row.cellClass ?? "items-center justify-center text-center"].join(" ")}
                 >
-                  {row.render(event)}
+                  <div className="w-full rounded-3xl bg-[var(--brand-cream)]/85 px-6 py-8 shadow-md shadow-black/10 backdrop-blur-sm">
+                    {row.render(event)}
+                  </div>
                 </div>
               ))}
             </Fragment>

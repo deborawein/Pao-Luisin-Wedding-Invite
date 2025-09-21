@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 
-export default function SectionQuoteVideo() {
+export default function SectionMensaje() {
   const videoRef = useRef(null);
   const [isPaused, setIsPaused] = useState(false);
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
@@ -53,7 +53,7 @@ export default function SectionQuoteVideo() {
 
   return (
     <section
-      id="sectionQuoteVideo"
+      id="sectionMensaje"
       className="relative min-h-screen grid place-items-center text-[var(--brand-cream)] px-6"
     >
       {/* Background video */}

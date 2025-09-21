@@ -1,19 +1,16 @@
 // App.jsx
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import LogoLine from "./assets/logo2.svg";
-import SectionQuoteVideo from "./components/SectionQuoteVideo";
-import SectionStart from "./components/SectionStart";
-import SectionItinerary from "./components/SectionItinerary";
-import SectionSaveTheDate from "./components/SectionSaveTheDate";
-import SectionDetails from "./components/SectionDetails";
+import SectionMensaje from "./components/SectionMensaje";
+import SectionInicio from "./components/SectionInicio";
+import SectionAgenda from "./components/SectionAgenda";
+import SectionGuardaLaFecha from "./components/SectionGuardaLaFecha";
+import SectionCodigoVestimenta from "./components/SectionCodigoVestimenta";
 import SectionRsvp from "./components/SectionRsvp";
 import SectionEnd from "./components/SectionEnd";
 
 export default function App() {
   const [open, setOpen] = useState(false);
-  const toggleRef = useRef(null);
-  const firstLinkRef = useRef(null);
-  const hasMounted = useRef(false);
 
   // Allow ESC to dismiss the menu when it's visible.
   useEffect(() => {
@@ -32,19 +29,6 @@ export default function App() {
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [open]);
 
-  // Trap focus between the toggle and first link after initial render.
-  useEffect(() => {
-    if (!hasMounted.current) {
-      hasMounted.current = true;
-      return;
-    }
-
-    if (open) {
-      firstLinkRef.current?.focus();
-    } else {
-      toggleRef.current?.focus();
-    }
-  }, [open]);
 
   return (
     <div className="relative h-screen flex flex-col">
@@ -76,7 +60,7 @@ export default function App() {
         <nav className="sticky top-0 z-50 h-16 text-[var(--paper)] bg-gradient-to-b from-black/50 via-black/20 to-transparent">
           <div className="relative z-[60] flex items-center justify-between px-4 py-3">
             <a
-              href="#sectionStart"
+              href="#sectionInicio"
               className="flex items-center focus-no-outline"
               onClick={() => setOpen(false)}
             >
@@ -90,7 +74,6 @@ export default function App() {
               aria-expanded={open}
               aria-controls="main-menu"
               onClick={() => setOpen(v => !v)}
-              ref={toggleRef}
               className="relative z-50 grid h-10 w-10 place-items-center focus:outline-none focus-visible:outline-none focus-no-outline focus-soft"
             >
               <span className={[
@@ -122,11 +105,11 @@ export default function App() {
           >
             <div className="flex w-full max-w-md flex-col items-center space-y-4">
               {[ 
-                ["Inicio", "#sectionStart"],
-                ["Guarda la Fecha", "#sectionSaveTheDate"],
-                ["Mensaje", "#sectionQuoteVideo"],
-                ["Agenda", "#sectionItinerary"],
-                ["Código de Vestimenta", "#sectionDressCode"],
+                ["Inicio", "#sectionInicio"],
+                ["Guarda la Fecha", "#sectionGuardaLaFecha"],
+                ["Mensaje", "#sectionMensaje"],
+                ["Agenda", "#sectionAgenda"],
+                ["Código de Vestimenta", "#sectionCodigoVestimenta"],
                 ["RSVP", "#sectionRsvp"],
                 ["End", "#sectionEnd"],
               ].map(([label, href]) => (
@@ -134,7 +117,6 @@ export default function App() {
                   key={href}
                   href={href}
                   onClick={() => setOpen(false)}
-                  ref={href === "#sectionStart" ? firstLinkRef : undefined}
                   role="menuitem"
                   className="focus-no-outline focus-soft hover-brand-sage w-full text-center py-3 uppercase tracking-[0.35em] text-sm"
                 >
@@ -146,11 +128,11 @@ export default function App() {
         </nav>
 
         {/* Sections */}
-        <SectionStart />
-        <SectionSaveTheDate />
-        <SectionQuoteVideo />
-        <SectionItinerary />
-        <SectionDetails />
+        <SectionInicio />
+        <SectionGuardaLaFecha />
+        <SectionMensaje />
+        <SectionAgenda />
+        <SectionCodigoVestimenta />
         <SectionRsvp />
         <SectionEnd />
       </main>
