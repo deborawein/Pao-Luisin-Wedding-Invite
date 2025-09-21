@@ -77,3 +77,16 @@ body {
 
 /* ===== Itinerary layout ===== */
 .itin-wrap { padding: 2.5rem 0; }
+
+.agenda-grid { width: 100%; }
+
+@media (min-width: 900px) {
+  .agenda-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 64px;
+    row-gap: 0;
+    align-items: center;
+    justify-items: center;
+  }
+}
