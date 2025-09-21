@@ -75,34 +75,5 @@ body {
     "Palatino", "Times New Roman", Times, serif;
 }
 
-/* ===== Itinerary layout (NO snap) ===== */
-
-/* Portrait: stack items naturally with comfy spacing */
-.itin-wrap { padding: 2.5rem 0; }              /* section padding */
-.mobile-itinerary { display: block; }           /* stacked cards */
-.desktop-itinerary { display: none; }
-.mobile-itinerary .itinerary-item {
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 1.25rem;
-}
-
-/* Landscape: show two columns; section fills viewport & is vertically centered */
-@media (min-width: 700px) {
-  .itin-wrap {
-    min-height: 100dvh;
-    display: grid;
-    align-items: center;
-  }
-  .mobile-itinerary { display: none; }
-  .desktop-itinerary {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    column-gap: 64px;
-    row-gap: 0;
-    justify-items: center;
-  }
-}
+/* ===== Itinerary layout ===== */
+.itin-wrap { padding: 2.5rem 0; }
