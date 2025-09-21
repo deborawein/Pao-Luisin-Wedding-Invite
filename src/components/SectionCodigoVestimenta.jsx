@@ -16,17 +16,21 @@ export default function SectionCodigoVestimenta() {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(63,33,17,0.38),_rgba(45,24,12,0.55)_55%,_rgba(27,15,7,0.7)_100%)]" aria-hidden />
 
       <div className="relative mx-auto flex min-h-screen w-full max-w-5xl flex-col items-center px-6 py-20 md:py-24 lg:py-28">
-        <FramedPicture className="h-40 w-40" src="/vestimenta/vestimenta.png" alt="Moño y zapato" />
+        <img
+          src="/vestimenta/vestimenta.png"
+          alt="Moño y zapato"
+          className="h-40 w-auto object-contain drop-shadow-[0_18px_35px_rgba(33,17,5,0.4)]"
+        />
 
-        <h2 className="mt-10 text-3xl md:text-4xl tracking-[0.3em] text-[var(--brand-caramel)]">
+        <h2 className="mt-10 text-center text-3xl md:text-4xl tracking-[0.3em] text-[var(--brand-caramel)]">
           CÓDIGO DE VESTIMENTA
         </h2>
 
-        <p className="mt-6 text-2xl md:text-3xl font-halimum text-[var(--paper)]/95">
+        <p className="mt-6 text-center text-2xl md:text-3xl font-halimum text-[var(--paper)]/95">
           Formal, Elegante, Espectacular
         </p>
 
-        <p className="mt-6 max-w-3xl text-sm md:text-base tracking-wide text-[var(--paper)]/85">
+        <p className="mt-6 max-w-3xl text-center text-sm md:text-base tracking-wide text-[var(--paper)]/85">
           Algunos colores se han destinado con cariño a personas únicas en nuestra historia, agradecemos no usarlos la noche del evento.
         </p>
 
@@ -40,7 +44,7 @@ export default function SectionCodigoVestimenta() {
           ))}
         </div>
 
-        <p className="mt-8 text-base font-halimum text-[var(--paper)]/90">
+        <p className="mt-8 text-center text-base font-halimum text-[var(--paper)]/90">
           El blanco brilla sólo para Pao (la novia)
         </p>
 
@@ -57,12 +61,16 @@ export default function SectionCodigoVestimenta() {
           />
         </div>
 
-        <FramedPicture className="mt-14 h-36 w-36" src="/vestimenta/bebidas.png" alt="Brindis" />
+        <img
+          src="/vestimenta/bebidas.png"
+          alt="Brindis"
+          className="mt-14 h-36 w-auto object-contain drop-shadow-[0_18px_35px_rgba(33,17,5,0.4)]"
+        />
 
-        <p className="mt-6 text-2xl tracking-[0.3em] text-[var(--brand-caramel)]">
+        <p className="mt-6 text-center text-2xl tracking-[0.3em] text-[var(--brand-caramel)]">
           EVENTO SÓLO PARA
         </p>
-        <p className="mt-3 text-3xl font-halimum text-[var(--paper)]/95">
+        <p className="mt-3 text-center text-3xl font-halimum text-[var(--paper)]/95">
           Adultos
         </p>
       </div>
@@ -81,22 +89,9 @@ function DressCard({ title, description, image }) {
       <h3 className="text-lg uppercase tracking-[0.3em] text-[var(--brand-caramel)]">
         {title}
       </h3>
-      <p className="text-sm md:text-base text-[var(--paper)]/85 leading-relaxed max-w-sm">
+      <p className="text-center text-sm md:text-base text-[var(--paper)]/85 leading-relaxed max-w-sm">
         {description}
       </p>
-    </div>
-  );
-}
-
-function FramedPicture({ className = "", src, alt }) {
-  return (
-    <div
-      className={[className, "relative rounded-[26px] border-8 border-[rgba(139,94,50,0.85)] shadow-[0_18px_35px_rgba(33,17,5,0.35)]"].join(
-        " "
-      )}
-    >
-      <div className="absolute inset-0 -z-10 rounded-[18px] bg-[rgba(63,41,25,0.35)]" />
-      <img src={src} alt={alt} className="h-full w-full rounded-[14px] object-cover" />
     </div>
   );
 }
