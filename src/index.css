@@ -80,6 +80,7 @@ body {
 /* Portrait: stack items naturally with comfy spacing */
 .itin-wrap { padding: 2.5rem 0; }              /* section padding */
 .mobile-itinerary { display: block; }           /* stacked cards */
+.desktop-itinerary { display: none; }
 .mobile-itinerary .itinerary-item {
   padding: 0;
   display: flex;
@@ -90,17 +91,18 @@ body {
 }
 
 /* Landscape: show two columns; section fills viewport & is vertically centered */
-@media (min-width: 1024px) {
+@media (min-width: 700px) {
   .itin-wrap {
-    min-height: 100dvh;                        /* entire section = viewport */
+    min-height: 100dvh;
     display: grid;
-    align-items: center;                       /* vertical centering */
+    align-items: center;
   }
-  .mobile-itinerary {
+  .mobile-itinerary { display: none; }
+  .desktop-itinerary {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     column-gap: 64px;
     row-gap: 0;
+    justify-items: center;
   }
-  .mobile-itinerary .itinerary-item { gap: 1.5rem; }
 }
