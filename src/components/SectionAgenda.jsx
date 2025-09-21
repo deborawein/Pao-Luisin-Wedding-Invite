@@ -31,7 +31,7 @@ export default function SectionAgenda() {
         className={[
           "flex h-full flex-col items-center text-center",
           "overflow-hidden rounded-3xl text-[var(--brand-cream)]",
-          "backdrop-blur-sm border border-white/10 bg-white/10",
+          "backdrop-blur-xs border border-white/10 bg-white/10",
           shellPadding,
           shadow,
           "shadow-black/20",
@@ -40,7 +40,7 @@ export default function SectionAgenda() {
       >
         <div className={["flex w-full flex-col", bodyGap, "items-center"].join(" ")}>
           <div className="flex min-h-[2.75rem] w-full items-center justify-center">
-            <h3 className="text-2xl uppercase tracking-[0.3em] text-[var(--brand-cafe)]">
+            <h3 className="text-3xl md:text-4xl tracking-[0.3em] uppercase text-[var(--brand-cafe)]">
               {event.title}
             </h3>
           </div>
@@ -85,16 +85,16 @@ export default function SectionAgenda() {
   return (
     <section id="sectionAgenda" className="bg-[var(--brand-sage)]/50 text-[var(--ink)]">
       <div className="relative">
-        <div aria-hidden className="absolute inset-0 -z-30 bg-[var(--brand-deep)]/55" />
+        <div aria-hidden className="absolute inset-0 -z-30 bg-[var(--brand-deep)]/35" />
         <div
           aria-hidden
-          className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_top,_rgba(34,78,50,0.35)_0%,_rgba(17,44,27,0.58)_55%,_rgba(10,28,17,0.72)_100%)]"
+          className="absolute inset-0 -z-20 bg-[var(--brand-forest)]/35"
         />
 
         <div className="relative z-10 itin-wrap mx-auto max-w-3xl md:max-w-6xl px-3 md:px-6">
           <header className="mt-10 text-center">
             <p className="text-sm uppercase tracking-[0.4em] text-[var(--brand-forest)]/55">Nuestra</p>
-            <h2 className="mt-3 text-3xl md:text-4xl font-halimum text-[var(--brand-cafe)]">Agenda</h2>
+            <h2 className="mt-3 text-[8vw] md:text-4xl font-halimum text-[var(--brand-cafe)]">Agenda</h2>
           </header>
 
           <div className="mobile-itinerary md:!hidden space-y-6 py-16">
