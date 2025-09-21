@@ -29,3 +29,10 @@ dist/
 .DS_Store
 .env
 .env.* # good defaults for Vite/React/Tailwind
+node_modules/
+dist/
+.build/
+.next/
+.DS_Store
+.env
+.env.* # good defaults for Vite/React/Tailwind
