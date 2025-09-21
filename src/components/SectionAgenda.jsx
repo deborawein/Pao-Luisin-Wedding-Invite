@@ -20,56 +20,55 @@ export default function SectionAgenda() {
 
   const renderCard = (event, variant = "mobile") => {
     const isMobile = variant === "mobile";
-    const baseLayout = isMobile
-      ? "flex flex-col items-center gap-5"
-      : "flex h-full flex-col items-center gap-6";
     const shellPadding = isMobile ? "px-5 py-7" : "px-9 py-10";
-    const shadow = isMobile ? "shadow-md" : "shadow-xl";
-    const imageSize = isMobile ? "w-56 h-56" : "w-56 h-56";
+    const shadow = isMobile ? "shadow-lg" : "shadow-xl";
     const cardMargin = isMobile ? "mx-4" : "";
+    const bodyGap = isMobile ? "gap-5" : "gap-6";
 
     return (
       <article
         key={`${variant}-${event.title}`}
         className={[
-          baseLayout,
-          "overflow-hidden rounded-3xl text-center text-[var(--brand-cream)]",
-          "backdrop-blur-sm border border-white/5 bg-white/5",
+          "flex h-full flex-col items-center text-center",
+          "overflow-hidden rounded-3xl text-[var(--brand-cream)]",
+          "backdrop-blur-sm border border-white/10 bg-white/10",
           shellPadding,
           shadow,
           "shadow-black/20",
           cardMargin,
         ].join(" ")}
       >
-        <h3 className="text-2xl uppercase tracking-[0.3em] text-[var(--brand-cafe)]">
-          {event.title}
-        </h3>
+        <div className={["flex w-full flex-col items-center", bodyGap].join(" ")}>
+          <h3 className="min-h-[2.5rem] text-2xl uppercase tracking-[0.3em] text-[var(--brand-cafe)]">
+            {event.title}
+          </h3>
 
-        <img
-          src={event.img}
-          alt={event.venueScript}
-          className={[imageSize, "object-contain drop-shadow-md mx-auto mt-6"].join(" ")}
-        />
+          <img
+            src={event.img}
+            alt={event.venueScript}
+            className="w-56 h-56 object-contain drop-shadow-md"
+          />
 
-        <p className="mt-6 font-halimum text-3xl leading-tight text-[var(--brand-cream)] max-w-sm mx-auto">
-          {event.venueScript}
-        </p>
+          <p className="font-halimum text-3xl leading-tight text-[var(--brand-cream)] max-w-sm mx-auto min-h-[3.5rem]">
+            {event.venueScript}
+          </p>
 
-        <div className="mt-4 flex items-center justify-center gap-3 text-lg">
-          <LocationIcon className="w-5 h-5 text-[var(--brand-sage)]" />
-          <span>{event.address}</span>
-        </div>
+          <div className="flex items-center justify-center gap-3 text-lg min-h-[2.5rem]">
+            <LocationIcon className="w-5 h-5 text-[var(--brand-sage)]" />
+            <span>{event.address}</span>
+          </div>
 
-        <div className="mt-2 flex items-center justify-center gap-2 text-lg">
-          <ClockIcon className="w-5 h-5 text-[var(--brand-sage)]" />
-          <span className="tracking-wide">{event.time}</span>
+          <div className="flex items-center justify-center gap-2 text-lg min-h-[2.25rem]">
+            <ClockIcon className="w-5 h-5 text-[var(--brand-sage)]" />
+            <span className="tracking-wide">{event.time}</span>
+          </div>
         </div>
 
         <a
           href={event.mapUrl}
           target="_blank"
           rel="noreferrer"
-          className="mt-6 inline-block rounded-full px-6 py-2 bg-[var(--brand-cafe)] text-[var(--paper)] hover:opacity-90 transition focus-no-outline focus-soft hover-brand-sage border border-transparent"
+          className="mt-6 md:mt-auto inline-block rounded-full px-6 py-2 bg-[var(--brand-cafe)] text-[var(--paper)] hover:opacity-90 transition focus-no-outline focus-soft hover-brand-sage border border-transparent"
         >
           Ver ubicación
         </a>
