@@ -71,7 +71,7 @@ export default function App() {
         style={{ scrollbarGutter: "stable" }}
       > */}
         {/* STICKY NAV inside the scroll container */}
-        <nav className="sticky top-0 z-50 h-16 text-[var(--paper)] bg-[color:rgb(15_51_28_/_0.9)] backdrop-blur-sm">
+        <nav className="sticky top-0 z-50 h-16 text-[var(--paper)] bg-gradient-to-b from-black/70 via-black/40 to-transparent backdrop-blur-sm">
           <div className="relative z-50 flex items-center justify-between px-4 py-3">
             <a href="#sectionStart" className="flex items-center" onClick={() => setOpen(false)}>
               <img src={LogoLine} alt="Pao & Luisin" className="h-8 w-auto sm:h-10" />
@@ -108,7 +108,7 @@ export default function App() {
             role="menu"
             className={[
               "absolute left-0 right-0 top-full z-50",   // ensure above overlay
-              // "backdrop-blur-sm bg-black/40",
+              "bg-gradient-to-b from-black/70 via-black/50 to-black/20 backdrop-blur-md",
               "transition-all duration-300",
               open ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 -translate-y-2 pointer-events-none",
             ].join(" ")}
