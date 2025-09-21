@@ -14,8 +14,8 @@ export default function SectionSaveTheDate() {
         <div className="text-center">
           {/* Script title */}
           <h3 className="font-halimum pt-10 md:pt-0 pb-6 text-[8vw] md:text-4xl leading-none text-[var(--brand-cafe)]">
-            ¡Nos casamos <br/>
-            en Colombia!
+            <span className="block">¡Nos casamos</span>
+            <span className="block mt-6">en Colombia!</span>
           </h3>
 
           <div className="mx-auto md:mx-0 max-w-prose">
@@ -46,9 +46,9 @@ export default function SectionSaveTheDate() {
         <div className="absolute inset-0 -z-30 bg-[var(--brand-deep)]" />
         {/* content above overlay */}
         <div className="relative z-10 mx-auto max-w-6xl px-6 md:px-10 lg:px-12 py-12 md:py-20 text-center text-[var(--brand-cream)]">
-          <h3 className="text-[8vw] md:text-4xl mb-3 font-halimum">Faltan</h3>
+          <h3 className="text-[8vw] md:text-4xl mb-3 font-halimum text-[var(--brand-cafe)]">Faltan</h3>
           <Countdown targetISO={EVENT_ISO} />
-          <p className="mt-4 text-base md:text-xl">SÁBADO 10 DE ENERO DE 2026</p>
+          <p className="mt-4 text-base md:text-xl text-[var(--brand-cafe)]">SÁBADO 10 DE ENERO DE 2026</p>
         </div>
       </div>
     </section>
@@ -81,14 +81,14 @@ function Countdown({ targetISO }) {
         <Number value={left.h} width={2} />
         <Colon />
         <Number value={left.m} width={2} />
-        <Colon faded />
-        <Number value={left.s} width={2} faded />
+        <Colon colorClass="text-[var(--brand-forest)]/55" />
+        <Number value={left.s} width={2} colorClass="text-[var(--brand-forest)]/80" />
 
         {/* Row 2: labels under numbers */}
         <Label text="Días"     col={1} />
         <Label text="Horas"    col={3} />
         <Label text="Minutos"  col={5} />
-        <Label text="Segundos" col={7} faded />
+        <Label text="Segundos" col={7} colorClass="text-[var(--brand-forest)]/65" />
       </div>
     </div>
   );
@@ -105,15 +105,16 @@ function getLeft(targetISO) {
   return { d, h, m, s };
 }
 
-function Number({ value, width = 2, faded = false }) {
+function Number({ value, width = 2, faded = false, colorClass }) {
   const txt = String(value).padStart(width, "0");
+  const tone = colorClass ?? (faded ? "text-[var(--brand-cream)]/65" : "text-[var(--paper)]");
   return (
     <span
       className={[
         "row-start-1 self-end font-light leading-none text-center",
         // shrink on tiny screens, grow on larger — stays within width
         "text-[clamp(18px,7.2vw,48px)] md:text-6xl lg:text-7xl",
-        faded ? "text-[var(--brand-cream)]/65" : "text-[var(--paper)]",
+        tone,
       ].join(" ")}
       style={{
         fontVariantNumeric: "tabular-nums",
@@ -125,13 +126,14 @@ function Number({ value, width = 2, faded = false }) {
   );
 }
 
-function Colon({ faded = false }) {
+function Colon({ faded = false, colorClass }) {
+  const tone = colorClass ?? (faded ? "text-[var(--brand-cream)]/55" : "text-[var(--paper)]");
   return (
     <span
       className={[
         "row-start-1 self-end text-center leading-none",
         "text-[clamp(16px,6.2vw,44px)] md:text-5xl lg:text-6xl",
-        faded ? "text-[var(--brand-cream)]/55" : "text-[var(--paper)]",
+        tone,
       ].join(" ")}
     >
       :
@@ -139,7 +141,8 @@ function Colon({ faded = false }) {
   );
 }
 
-function Label({ text, col, faded = false }) {
+function Label({ text, col, faded = false, colorClass }) {
+  const tone = colorClass ?? (faded ? "text-[var(--brand-cream)]/55" : "text-[var(--paper)]");
   return (
     <span
       className={[
@@ -147,7 +150,7 @@ function Label({ text, col, faded = false }) {
         "uppercase",
         "tracking-[0.25em] md:tracking-[0.3em]",
         "text-[10px] max-[360px]:text-[9px] md:text-sm",
-        faded ? "text-[var(--brand-cream)]/55" : "text-[var(--paper)]",
+        tone,
       ].join(" ")}
       style={{ gridColumnStart: col }}
     >

@@ -13,6 +13,7 @@ export default function App() {
   const [open, setOpen] = useState(false);
   const toggleRef = useRef(null);
   const firstLinkRef = useRef(null);
+  const hasMounted = useRef(false);
 
   useEffect(() => {
     if (!open) {
@@ -31,6 +32,11 @@ export default function App() {
   }, [open]);
 
   useEffect(() => {
+    if (!hasMounted.current) {
+      hasMounted.current = true;
+      return;
+    }
+
     if (open) {
       firstLinkRef.current?.focus();
     } else {
@@ -79,7 +85,7 @@ export default function App() {
               aria-controls="main-menu"
               onClick={() => setOpen(v => !v)}
               ref={toggleRef}
-              className="relative z-50 h-10 w-10 grid place-items-center"
+              className="relative z-50 grid h-10 w-10 place-items-center focus:outline-none focus-visible:outline-none"
             >
               <span className={[
                 "absolute block h-0.5 w-6 bg-[var(--paper)] transition-transform duration-200",

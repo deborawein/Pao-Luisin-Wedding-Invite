@@ -83,8 +83,14 @@ export default function SectionQuoteVideo() {
           type="button"
           onClick={handleTogglePlayback}
           className="mt-8 inline-flex items-center gap-2 rounded-full border border-[var(--brand-cream)]/70 bg-[color:rgb(15_51_28_/_0.65)] px-5 py-2 text-sm font-medium text-[var(--brand-cream)] transition hover:bg-[color:rgb(15_51_28_/_0.85)]"
+          aria-label={isPaused ? "Reproducir video de fondo" : "Pausar video de fondo"}
         >
-          {isPaused ? "Reproducir video de fondo" : "Pausar video de fondo"}
+          <span aria-hidden>
+            {isPaused ? "▶" : "❚❚"}
+          </span>
+          <span className="sr-only">
+            {isPaused ? "Reproducir" : "Pausar"}
+          </span>
         </button>
 
         {prefersReducedMotion && (
