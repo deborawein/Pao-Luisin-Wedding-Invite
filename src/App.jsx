@@ -122,11 +122,11 @@ export default function App() {
           >
             <div className="flex w-full max-w-md flex-col items-center space-y-4">
               {[ 
-                ["Top", "#sectionStart"],
-                ["Invite", "#sectionSaveTheDate"],
-                ["Message", "#sectionQuoteVideo"],
-                ["Itinerary", "#sectionItinerary"],
-                ["Details", "#sectionDetails"],
+                ["Inicio", "#sectionStart"],
+                ["Guarda la Fecha", "#sectionSaveTheDate"],
+                ["Mensaje", "#sectionQuoteVideo"],
+                ["Agenda", "#sectionItinerary"],
+                ["Código de Vestimenta", "#sectionDressCode"],
                 ["RSVP", "#sectionRsvp"],
                 ["End", "#sectionEnd"],
               ].map(([label, href]) => (
