@@ -23,7 +23,7 @@ export default function SectionAgenda() {
     const shellPadding = isMobile ? "px-5 py-7" : "px-9 py-10";
     const shadow = isMobile ? "shadow-lg" : "shadow-xl";
     const cardMargin = isMobile ? "mx-4" : "";
-    const bodyGap = isMobile ? "gap-5" : "gap-6";
+    const bodyGap = isMobile ? "gap-6" : "gap-7";
 
     return (
       <article
@@ -38,27 +38,33 @@ export default function SectionAgenda() {
           cardMargin,
         ].join(" ")}
       >
-        <div className={["flex w-full flex-col items-center", bodyGap].join(" ")}>
-          <h3 className="min-h-[2.5rem] text-2xl uppercase tracking-[0.3em] text-[var(--brand-cafe)]">
-            {event.title}
-          </h3>
+        <div className={["flex w-full flex-col", bodyGap, "items-center"].join(" ")}>
+          <div className="flex min-h-[2.75rem] w-full items-center justify-center">
+            <h3 className="text-2xl uppercase tracking-[0.3em] text-[var(--brand-cafe)]">
+              {event.title}
+            </h3>
+          </div>
 
-          <img
-            src={event.img}
-            alt={event.venueScript}
-            className="w-56 h-56 object-contain drop-shadow-md"
-          />
+          <div className="flex w-full items-center justify-center">
+            <img
+              src={event.img}
+              alt={event.venueScript}
+              className="w-56 h-56 object-contain drop-shadow-md"
+            />
+          </div>
 
-          <p className="font-halimum text-3xl leading-tight text-[var(--brand-cream)] max-w-sm mx-auto min-h-[3.5rem]">
-            {event.venueScript}
-          </p>
+          <div className="flex min-h-[4rem] w-full items-center justify-center">
+            <p className="font-halimum text-3xl leading-tight text-[var(--brand-cream)] max-w-sm">
+              {event.venueScript}
+            </p>
+          </div>
 
-          <div className="flex items-center justify-center gap-3 text-lg min-h-[2.5rem]">
+          <div className="flex min-h-[2.75rem] w-full items-center justify-center gap-3 text-lg">
             <LocationIcon className="w-5 h-5 text-[var(--brand-sage)]" />
             <span>{event.address}</span>
           </div>
 
-          <div className="flex items-center justify-center gap-2 text-lg min-h-[2.25rem]">
+          <div className="flex min-h-[2.5rem] w-full items-center justify-center gap-2 text-lg">
             <ClockIcon className="w-5 h-5 text-[var(--brand-sage)]" />
             <span className="tracking-wide">{event.time}</span>
           </div>
