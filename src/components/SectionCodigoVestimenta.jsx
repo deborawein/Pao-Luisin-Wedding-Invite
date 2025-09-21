@@ -34,19 +34,29 @@ export default function SectionCodigoVestimenta() {
           Algunos colores se han destinado con cariño a personas únicas en nuestra historia, agradecemos no usarlos la noche del evento.
         </p>
 
-        <div className="mt-8 flex flex-wrap items-center justify-center gap-4 gap-y-14 md:gap-6">
-          {COLOR_SWATCHES.map((color) => (
-            <span
-              key={color}
-              style={{ backgroundColor: color }}
-              className="h-12 w-12 rounded-full border border-white/30 shadow-[0_8px_15px_rgba(0,0,0,0.25)]"
-            />
-          ))}
-        </div>
+        <div className="mt-8 flex flex-col items-center gap-6">
+          <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6">
+            {COLOR_SWATCHES.slice(0, 5).map((color) => (
+              <span
+                key={color}
+                style={{ backgroundColor: color }}
+                className="h-12 w-12 rounded-full border border-white/30 shadow-[0_8px_15px_rgba(0,0,0,0.25)]"
+              />
+            ))}
+          </div>
 
-        <p className="mt-8 text-center text-[6vw] md:text-4xl font-halimum text-[var(--paper)]/90">
-          El blanco<br/>brilla sólo para<br/>la novia
-        </p>
+          <div className="flex items-start gap-4">
+            <div className="mt-1 flex h-12 w-12 items-start justify-center">
+              <span
+                style={{ backgroundColor: COLOR_SWATCHES[5] }}
+                className="h-12 w-12 rounded-full border border-white/40 shadow-[0_8px_15px_rgba(0,0,0,0.25)]"
+              />
+            </div>
+            <p className="text-left md:text-center text-[6vw] md:text-4xl font-halimum text-[var(--paper)]/90 leading-tight">
+              El blanco<br/>brilla sólo para<br/>la novia
+            </p>
+          </div>
+        </div>
 
         <div className="mt-12 grid gap-8 md:grid-cols-2 md:gap-12">
           <DressCard
