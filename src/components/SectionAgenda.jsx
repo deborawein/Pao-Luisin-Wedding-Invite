@@ -53,8 +53,8 @@ export default function SectionAgenda() {
             />
           </div>
 
-          <div className="flex min-h-[4rem] w-full items-center justify-center">
-            <p className="font-halimum text-3xl leading-tight text-[var(--brand-cream)] max-w-sm">
+          <div className="flex h-[5.25rem] w-full items-center justify-center">
+            <p className="font-halimum text-3xl leading-tight text-[var(--brand-cream)] max-w-sm text-balance text-center">
               {event.venueScript}
             </p>
           </div>
