@@ -23,9 +23,19 @@ body {
   --focus-ring:    #F0C987;  /* accessible outline */
 }
 
-:where(a, button):focus-visible {
+:where(a, button):focus-visible:not(.focus-no-outline) {
   outline: 3px solid var(--focus-ring);
   outline-offset: 3px;
+}
+
+.focus-no-outline:focus-visible {
+  outline: none;
+}
+
+.focus-soft:focus-visible,
+.focus-soft:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(6px);
 }
 
 /* Utility */

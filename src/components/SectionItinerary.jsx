@@ -1,6 +1,5 @@
-import React from "react";
-
 export default function SectionItinerary() {
+  // Details shown on the itinerary cards.
   const events = [
     {
       title: "CEREMONIA RELIGIOSA",
@@ -51,7 +50,7 @@ export default function SectionItinerary() {
                 rel="noreferrer"
                 className="mt-4 inline-block rounded-full px-5 py-2
                            bg-[var(--brand-cafe)] text-[var(--paper)]
-                           hover:opacity-90 transition"
+                           hover:opacity-90 transition focus-no-outline focus-soft"
               >
                 Ver ubicación
               </a>

@@ -15,9 +15,10 @@ export default function App() {
   const firstLinkRef = useRef(null);
   const hasMounted = useRef(false);
 
+  // Allow ESC to dismiss the menu when it's visible.
   useEffect(() => {
     if (!open) {
-      return undefined;
+      return;
     }
 
     const handleKeyDown = (event) => {
@@ -31,6 +32,7 @@ export default function App() {
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [open]);
 
+  // Trap focus between the toggle and first link after initial render.
   useEffect(() => {
     if (!hasMounted.current) {
       hasMounted.current = true;
@@ -73,7 +75,11 @@ export default function App() {
         {/* STICKY NAV inside the scroll container */}
         <nav className="sticky top-0 z-50 h-16 text-[var(--paper)] bg-gradient-to-b from-black/50 via-black/20 to-transparent">
           <div className="relative z-[60] flex items-center justify-between px-4 py-3">
-            <a href="#sectionStart" className="flex items-center" onClick={() => setOpen(false)}>
+            <a
+              href="#sectionStart"
+              className="flex items-center focus-no-outline"
+              onClick={() => setOpen(false)}
+            >
               <img src={LogoLine} alt="Pao & Luisin" className="h-8 w-auto sm:h-10" />
             </a>
 
@@ -85,7 +91,7 @@ export default function App() {
               aria-controls="main-menu"
               onClick={() => setOpen(v => !v)}
               ref={toggleRef}
-              className="relative z-50 grid h-10 w-10 place-items-center focus:outline-none focus-visible:outline-none"
+              className="relative z-50 grid h-10 w-10 place-items-center focus:outline-none focus-visible:outline-none focus-no-outline focus-soft"
             >
               <span className={[
                 "absolute block h-0.5 w-6 bg-[var(--paper)] transition-transform duration-200",
@@ -130,7 +136,7 @@ export default function App() {
                   onClick={() => setOpen(false)}
                   ref={href === "#sectionStart" ? firstLinkRef : undefined}
                   role="menuitem"
-                  className="w-full text-center py-3 hover:underline uppercase tracking-[0.35em] text-sm"
+                  className="focus-no-outline focus-soft w-full text-center py-3 hover:underline uppercase tracking-[0.35em] text-sm"
                 >
                   {label}
                 </a>
