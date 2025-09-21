@@ -64,12 +64,14 @@ body {
   font-display: swap;
   font-synthesis: none;
 }
-@theme {
-  --font-halimum: "Halimum", cursive;
-  --font-cinzelish: "Didot", "Bodoni 72", "Bodoni MT",
+.font-halimum { font-family: "Halimum", cursive; }
+.font-cinzelish {
+  font-family: "Didot", "Bodoni 72", "Bodoni MT",
     "Palatino", "Palatino Linotype", "Book Antiqua",
     "Times New Roman", Times, serif;
-  --font-engraved: "Copperplate", "Copperplate Gothic Light",
+}
+.font-engraved {
+  font-family: "Copperplate", "Copperplate Gothic Light",
     "Palatino", "Times New Roman", Times, serif;
 }
 
