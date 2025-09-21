@@ -22,7 +22,7 @@ export default function SectionAgenda() {
     const isMobile = variant === "mobile";
     const shellPadding = isMobile ? "px-5 py-10" : "px-9 py-10";
     const shadow = isMobile ? "shadow-lg" : "shadow-xl";
-    const cardMargin = isMobile ? "mx-4" : "";
+    const cardMargin = isMobile ? "mx-4" : "mx-4";
     const bodyGap = isMobile ? "gap-6" : "gap-7";
 
     return (
@@ -91,17 +91,17 @@ export default function SectionAgenda() {
           className="absolute inset-0 -z-20 bg-[var(--brand-forest)]/35"
         />
 
-        <div className="relative z-10 itin-wrap mx-auto max-w-3xl md:max-w-6xl px-3 md:px-6">
+        <div className="relative z-10 itin-wrap mx-auto max-w-3xl lg:max-w-6xl px-3 md:px-6 lg:px-8">
           <header className="mt-10 text-center">
             <p className="text-sm uppercase tracking-[0.4em] text-[var(--brand-forest)]/55">Nuestra</p>
             <h2 className="mt-3 text-[8vw] md:text-4xl font-halimum text-[var(--brand-cafe)]">Agenda</h2>
           </header>
 
-          <div className="mobile-itinerary md:!hidden space-y-6 py-16">
+          <div className="mobile-itinerary lg:!hidden space-y-6 py-16">
             {events.map((event) => renderCard(event, "mobile"))}
           </div>
 
-          <div className="desktop-itinerary hidden md:grid md:grid-cols-2 md:gap-12 pt-20 pb-20">
+          <div className="desktop-itinerary hidden lg:grid lg:grid-cols-2 lg:gap-12 pt-20 pb-20">
             {events.map((event) => renderCard(event, "desktop"))}
           </div>
         </div>

@@ -90,7 +90,7 @@ body {
 }
 
 /* Landscape: show two columns; section fills viewport & is vertically centered */
-@media (orientation: landscape) and (min-width: 900px) {
+@media (min-width: 1024px) {
   .itin-wrap {
     min-height: 100dvh;                        /* entire section = viewport */
     display: grid;
