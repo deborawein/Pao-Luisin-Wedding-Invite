@@ -79,8 +79,8 @@ body {
 
 /* Portrait: stack items naturally with comfy spacing */
 .itin-wrap { padding: 2.5rem 0; }              /* section padding */
-.itinerary-grid { display: block; }            /* stacked cards */
-.itinerary-item {
+.mobile-itinerary { display: block; }           /* stacked cards */
+.mobile-itinerary .itinerary-item {
   padding: 4.5rem 0;                 /* space between cards */
   display: flex;
   flex-direction: column;
@@ -96,13 +96,13 @@ body {
     display: grid;
     align-items: center;                       /* vertical centering */
   }
-  .itinerary-grid {
+  .mobile-itinerary {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     column-gap: 64px;
     row-gap: 0;
   }
-  .itinerary-item {
+  .mobile-itinerary .itinerary-item {
     padding: 0;                        /* tighter; already centered */
     align-items: center;
     text-align: center;
