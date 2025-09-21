@@ -26,7 +26,7 @@ export default function SectionGuardaLaFecha() {
             </p>
           </div>
 
-          <div className="mt-6 h-px w-40 md:w-56 bg-[var(--brand-sage)]/60 mx-auto md:mx-0" />
+          <div className="mt-6 h-px w-40 md:w-56 bg-[var(--brand-sage)]/60 mx-auto" />
         </div>
 
         {/* Right column — image */}
@@ -46,9 +46,9 @@ export default function SectionGuardaLaFecha() {
         <div className="absolute inset-0 -z-30 bg-[var(--brand-deep)]" />
         {/* content above overlay */}
         <div className="relative z-10 mx-auto max-w-6xl px-6 md:px-10 lg:px-12 py-12 md:py-20 text-center text-[var(--brand-cream)]">
-          <h3 className="text-[8vw] md:text-4xl mb-3 font-halimum text-[var(--brand-cafe)]">Faltan</h3>
+          <h3 className="text-[10vw] md:text-5xl mb-3 font-halimum text-[var(--brand-cafe)]">Faltan</h3>
           <Countdown targetISO={EVENT_ISO} />
-          <p className="mt-4 text-md md:text-2xl text-[var(--brand-cafe)] tracking-[0.35em] font-light">SÁBADO 10 DE ENERO DE 2026</p>
+          <p className="mt-4 text-[4vw] md:text-2xl text-[var(--brand-cafe)] tracking-[0.35em] font-light">SÁBADO 10 DE ENERO DE 2026</p>
         </div>
       </div>
     </section>

@@ -11,7 +11,7 @@ export default function SectionCodigoVestimenta() {
   return (
     <section
       id="sectionCodigoVestimenta"
-      className="relative min-h-screen snap-start bg-amber-900/70 text-[var(--paper)]"
+      className="relative min-h-screen snap-start bg-[var(--brand-cafe)]/75 text-[var(--paper)]"
     >
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(63,33,17,0.38),_rgba(45,24,12,0.55)_55%,_rgba(27,15,7,0.7)_100%)]" aria-hidden />
 
@@ -26,7 +26,7 @@ export default function SectionCodigoVestimenta() {
           CÓDIGO DE VESTIMENTA
         </h2>
 
-        <p className="mt-6 text-center text-2xl md:text-3xl font-halimum text-[var(--paper)]/95">
+        <p className="mt-6 text-center text-[8vw] md:text-4xl font-halimum text-[var(--paper)]/95">
           Formal, Elegante, Espectacular
         </p>
 
@@ -34,7 +34,7 @@ export default function SectionCodigoVestimenta() {
           Algunos colores se han destinado con cariño a personas únicas en nuestra historia, agradecemos no usarlos la noche del evento.
         </p>
 
-        <div className="mt-8 flex flex-wrap items-center justify-center gap-4 md:gap-6">
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-4 gap-y-14 md:gap-6">
           {COLOR_SWATCHES.map((color) => (
             <span
               key={color}
@@ -44,8 +44,8 @@ export default function SectionCodigoVestimenta() {
           ))}
         </div>
 
-        <p className="mt-8 text-center text-base font-halimum text-[var(--paper)]/90">
-          El blanco brilla sólo para Pao (la novia)
+        <p className="mt-8 text-center text-[6vw] md:text-4xl font-halimum text-[var(--paper)]/90">
+          El blanco<br/>brilla sólo para<br/>la novia
         </p>
 
         <div className="mt-12 grid gap-8 md:grid-cols-2 md:gap-12">
@@ -70,7 +70,7 @@ export default function SectionCodigoVestimenta() {
         <p className="mt-6 text-center text-2xl tracking-[0.3em] text-[var(--brand-caramel)]">
           EVENTO SÓLO PARA
         </p>
-        <p className="mt-3 text-center text-3xl font-halimum text-[var(--paper)]/95">
+        <p className="mt-3 text-center text-[8vw] md:text-4xl font-halimum text-[var(--brand-cream)]/95">
           Adultos
         </p>
       </div>

@@ -64,7 +64,7 @@ export default function SectionMensaje() {
       />
 
       {/* Dark overlay ABOVE the video */}
-      <div className="absolute inset-0 z-0 bg-[var(--brand-deep)]/60" />
+      <div className="absolute inset-0 z-0 bg-[var(--brand-deep)]/75" />
 
       {/* Centered quote ABOVE the overlay */}
       <div className="relative z-0 max-w-3xl text-center">

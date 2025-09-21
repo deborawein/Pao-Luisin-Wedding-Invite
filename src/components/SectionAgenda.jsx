@@ -20,7 +20,7 @@ export default function SectionAgenda() {
 
   const renderCard = (event, variant = "mobile") => {
     const isMobile = variant === "mobile";
-    const shellPadding = isMobile ? "px-5 py-7" : "px-9 py-10";
+    const shellPadding = isMobile ? "px-5 py-10" : "px-9 py-10";
     const shadow = isMobile ? "shadow-lg" : "shadow-xl";
     const cardMargin = isMobile ? "mx-4" : "";
     const bodyGap = isMobile ? "gap-6" : "gap-7";
@@ -60,12 +60,12 @@ export default function SectionAgenda() {
           </div>
 
           <div className="flex min-h-[2.75rem] w-full items-center justify-center gap-3 text-lg">
-            <LocationIcon className="w-5 h-5 text-[var(--brand-sage)]" />
+            <LocationIcon className="w-5 h-5 text-[var(--brand-forest)]/70" />
             <span>{event.address}</span>
           </div>
 
           <div className="flex min-h-[2.5rem] w-full items-center justify-center gap-2 text-lg md:mb-6">
-            <ClockIcon className="w-5 h-5 text-[var(--brand-sage)]" />
+            <ClockIcon className="w-5 h-5 text-[var(--brand-forest)]/70" />
             <span className="tracking-wide">{event.time}</span>
           </div>
         </div>
@@ -74,7 +74,7 @@ export default function SectionAgenda() {
           href={event.mapUrl}
           target="_blank"
           rel="noreferrer"
-          className="mt-6 md:mt-auto inline-block rounded-full px-6 py-2 bg-[var(--brand-cafe)] text-[var(--paper)] hover:opacity-90 transition focus-no-outline focus-soft hover-brand-sage border border-transparent"
+          className="text-xl mt-6 md:mt-auto inline-block rounded-full px-6 py-2 bg-[var(--brand-cafe)] text-[var(--paper)] hover:opacity-90 transition focus-no-outline focus-soft hover-brand-sage border border-transparent"
         >
           Ver ubicación
         </a>
