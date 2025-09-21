@@ -102,9 +102,5 @@ body {
     column-gap: 64px;
     row-gap: 0;
   }
-  .mobile-itinerary .itinerary-item {
-    align-items: center;
-    text-align: center;
-    gap: 1.5rem;
-  }
+  .mobile-itinerary .itinerary-item { gap: 1.5rem; }
 }
