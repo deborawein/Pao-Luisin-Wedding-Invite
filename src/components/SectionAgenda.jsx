@@ -74,7 +74,7 @@ export default function SectionAgenda() {
           href={event.mapUrl}
           target="_blank"
           rel="noreferrer"
-          className="text-xl mt-6 md:mt-auto inline-block rounded-full px-6 py-2 bg-[var(--brand-cafe)] text-[var(--paper)] hover:opacity-90 transition focus-no-outline focus-soft hover-brand-sage border border-transparent"
+          className="text-xl mt-6 md:mt-auto inline-block rounded-full px-6 py-2 bg-[var(--brand-cafe)] text-[var(--paper)] hover:opacity-90 transition focus-no-outline focus-soft hover-brand-sage border border-transparent shadow-[0_8px_15px_rgba(0,0,0,0.15)]"
         >
           Ver ubicación
         </a>
