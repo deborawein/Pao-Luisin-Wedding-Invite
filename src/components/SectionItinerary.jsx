@@ -53,8 +53,13 @@ export default function SectionItinerary() {
     },
     {
       key: "address",
-      cellClass: "flex items-center justify-center text-center h-full",
-      render: (event) => <p className="text-lg">{event.address}</p>,
+      cellClass: "flex items-center justify-center text-center gap-3 h-full",
+      render: (event) => (
+        <div className="flex items-center justify-center gap-3 text-lg">
+          <LocationIcon className="w-5 h-5 text-[var(--brand-forest)]/70" />
+          <span>{event.address}</span>
+        </div>
+      ),
     },
     {
       key: "time",
@@ -74,7 +79,7 @@ export default function SectionItinerary() {
           href={event.mapUrl}
           target="_blank"
           rel="noreferrer"
-          className="inline-block rounded-full px-6 py-2 bg-[var(--brand-cafe)] text-[var(--paper)] hover:opacity-90 transition focus-no-outline focus-soft"
+          className="inline-block rounded-full px-6 py-2 bg-[var(--brand-cafe)] text-[var(--paper)] hover:opacity-90 transition focus-no-outline focus-soft hover-brand-sage border border-transparent"
         >
           Ver ubicación
         </a>
@@ -97,7 +102,10 @@ export default function SectionItinerary() {
               <p className="font-halimum text-3xl leading-tight text-[var(--brand-cafe)] max-w-xs mx-auto">
                 {event.venueScript}
               </p>
-              <p className="text-base">{event.address}</p>
+              <div className="flex items-center justify-center gap-2 text-base">
+                <LocationIcon className="w-5 h-5 text-[var(--brand-forest)]/70" />
+                <span>{event.address}</span>
+              </div>
               <div className="flex items-center justify-center gap-2 text-base">
                 <ClockIcon className="w-5 h-5 text-[var(--brand-forest)]/70" />
                 <span className="tracking-wide">{event.time}</span>
@@ -106,7 +114,7 @@ export default function SectionItinerary() {
                 href={event.mapUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-block rounded-full px-5 py-2 bg-[var(--brand-cafe)] text-[var(--paper)] hover:opacity-90 transition focus-no-outline focus-soft"
+                className="inline-block rounded-full px-5 py-2 bg-[var(--brand-cafe)] text-[var(--paper)] hover:opacity-90 transition focus-no-outline focus-soft hover-brand-sage border border-transparent"
               >
                 Ver ubicación
               </a>
@@ -138,6 +146,15 @@ function ClockIcon({ className = "" }) {
     <svg viewBox="0 0 24 24" className={className} fill="none" stroke="currentColor" strokeWidth="1.5">
       <circle cx="12" cy="12" r="9" />
       <path d="M12 7v5l3 2" />
+    </svg>
+  );
+}
+
+function LocationIcon({ className = "" }) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} fill="none" stroke="currentColor" strokeWidth="1.5">
+      <path d="M12 21s-6-5.3-6-10.2A6 6 0 0 1 12 4a6 6 0 0 1 6 6.8C18 15.7 12 21 12 21Z" />
+      <circle cx="12" cy="10" r="2.5" />
     </svg>
   );
 }

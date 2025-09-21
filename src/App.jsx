@@ -136,7 +136,7 @@ export default function App() {
                   onClick={() => setOpen(false)}
                   ref={href === "#sectionStart" ? firstLinkRef : undefined}
                   role="menuitem"
-                  className="focus-no-outline focus-soft w-full text-center py-3 hover:underline uppercase tracking-[0.35em] text-sm"
+                  className="focus-no-outline focus-soft hover-brand-sage w-full text-center py-3 uppercase tracking-[0.35em] text-sm"
                 >
                   {label}
                 </a>

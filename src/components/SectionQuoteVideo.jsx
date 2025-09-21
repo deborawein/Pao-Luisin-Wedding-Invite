@@ -84,7 +84,7 @@ export default function SectionQuoteVideo() {
         <button
           type="button"
           onClick={handleTogglePlayback}
-          className="mt-8 inline-flex h-12 w-12 items-center justify-center rounded-full border border-[var(--brand-cream)]/70 bg-[color:rgb(15_51_28_/_0.65)] text-lg text-[var(--brand-cream)] transition hover:bg-[color:rgb(15_51_28_/_0.85)] focus-no-outline focus-soft"
+          className="mt-8 inline-flex h-12 w-12 items-center justify-center rounded-full border border-[var(--brand-cream)]/70 bg-[color:rgb(15_51_28_/_0.65)] text-lg text-[var(--brand-cream)] transition hover:bg-[color:rgb(15_51_28_/_0.85)] focus-no-outline focus-soft hover-brand-sage"
           aria-label={isPaused ? "Reproducir video de fondo" : "Pausar video de fondo"}
         >
           <span aria-hidden className="flex h-5 w-5 items-center justify-center">
