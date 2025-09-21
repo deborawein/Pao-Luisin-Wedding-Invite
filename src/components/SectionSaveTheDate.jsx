@@ -15,7 +15,7 @@ export default function SectionSaveTheDate() {
           {/* Script title */}
           <h3 className="font-halimum pt-10 md:pt-0 pb-6 text-[8vw] md:text-4xl leading-none text-[var(--brand-cafe)]">
             <span className="block">¡Nos casamos</span>
-            <span className="block mt-2">en Colombia!</span>
+            <span className="block mt-4">en Colombia!</span>
           </h3>
 
           <div className="mx-auto md:mx-0 max-w-prose">

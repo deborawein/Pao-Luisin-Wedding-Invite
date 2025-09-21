@@ -2,7 +2,7 @@ export default function SectionItinerary() {
   // Details shown on the itinerary cards.
   const events = [
     {
-      title: "CEREMONIA RELIGIOSA",
+      title: "Ceremonia Religiosa",
       img: "/itinerary/ceremonia.png",
       venueScript: "Urbanización Prados del Este",
       address: "Avenida 7 #5–54",
@@ -10,7 +10,7 @@ export default function SectionItinerary() {
       mapUrl: "https://maps.google.com/?q=Avenida+7+5-54+Cúcuta",
     },
     {
-      title: "RECEPCIÓN",
+      title: "Recepción",
       img: "/itinerary/reception.png",
       venueScript: "Los Cabos",
       address: "Cl. 11 #2E–75",
@@ -24,22 +24,24 @@ export default function SectionItinerary() {
   <div className="itin-wrap mx-auto max-w-3xl md:max-w-6xl px-6">
     <div className="itinerary-grid">
       {events.map((e, i) => (
-        <article key={i} className="itinerary-item text-center">
-              <h3 className="uppercase text-lg md:text-xl">{e.title}</h3>
+        <article key={i} className="itinerary-item">
+              <h3 className="text-xl md:text-2xl uppercase tracking-[0.2em] md:tracking-[0.3em]">
+                {e.title}
+              </h3>
 
               <img
                 src={e.img}
                 alt={e.venueScript}
-                className="mt-4 w-60 h-60 md:w-64 md:h-64 object-contain drop-shadow-md"
+                className="w-60 h-60 md:w-64 md:h-64 object-contain drop-shadow-md"
               />
 
-              <p className="font-halimum text-[7.2vw] md:text-3xl leading-none text-[var(--brand-cafe)] mt-6">
+              <p className="font-halimum text-[7.2vw] md:text-3xl leading-tight text-[var(--brand-cafe)] max-w-xs md:max-w-sm mx-auto">
                 {e.venueScript}
               </p>
 
-              <p className="mt-3 text-base md:text-lg">{e.address}</p>
+              <p className="text-base md:text-lg">{e.address}</p>
 
-              <div className="mt-2 flex items-center gap-2 text-base md:text-lg">
+              <div className="flex items-center gap-2 text-base md:text-lg">
                 <ClockIcon className="w-5 h-5 text-[var(--brand-forest)]/70" />
                 <span className="tracking-wide">{e.time}</span>
               </div>
@@ -48,7 +50,7 @@ export default function SectionItinerary() {
                 href={e.mapUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="mt-4 inline-block rounded-full px-5 py-2
+                className="inline-block rounded-full px-5 py-2
                            bg-[var(--brand-cafe)] text-[var(--paper)]
                            hover:opacity-90 transition focus-no-outline focus-soft"
               >
