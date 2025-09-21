@@ -2,28 +2,48 @@
 @import "tailwindcss";
 
 /* ===== Base / App frame ===== */
-html, body, #root { height: 100%; }
+html,
+body,
+#root {
+  height: 100%;
+}
+
 body {
   margin: 0;
-  overflow: hidden;            /* only your <main> should scroll */
+  overflow: hidden;
+  /* only your <main> should scroll */
 }
+
 :root {
   --nav-h: 64px;
 
   /* Brand palette */
-  --brand-deep:    #0F331C;  /* ink */
-  --brand-forest:  #1C4A2A;
-  --brand-sage:    #89A889;
-  --brand-cafe:    #7A4F28;
+  --brand-deep: #0F331C;
+  /* ink */
+  --brand-forest: #1C4A2A;
+  --brand-sage: #89A889;
+  --brand-cafe: #7A4F28;
   --brand-caramel: #BD8C57;
 
-  --brand-cream:   #F6E9C7;  /* light bg */
-  --paper:         #FFF8E9;  /* very light */
-  --ink:           #0F331C;  /* text on light */
+  --brand-cream: #F6E9C7;
+  /* light bg */
+  --paper: #FFF8E9;
+  /* very light */
+  --ink: #0F331C;
+  /* text on light */
+  --focus-ring: #F0C987;
+  /* accessible outline */
+}
+
+:where(a, button):focus-visible {
+  outline: 3px solid var(--focus-ring);
+  outline-offset: 3px;
 }
 
 /* Utility */
-.text-mainbeige { color: #E7E5C3; }
+.text-mainbeige {
+  color: #E7E5C3;
+}
 
 /* ===== Fixed, non-scrolling background behind the app ===== */
 .app-bg {
@@ -35,9 +55,19 @@ body {
   background-size: cover;
   pointer-events: none;
 }
+
 /* Switch image by orientation */
-@media (orientation: landscape) { .app-bg { background-image: url('/bg-desk.png'); } }
-@media (orientation: portrait)  { .app-bg { background-image: url('/bd-mobile.png'); } }
+@media (orientation: landscape) {
+  .app-bg {
+    background-image: url('/bg-desk.png');
+  }
+}
+
+@media (orientation: portrait) {
+  .app-bg {
+    background-image: url('/bd-mobile.png');
+  }
+}
 
 /* ===== Fonts ===== */
 @font-face {
@@ -48,6 +78,7 @@ body {
   font-display: swap;
   font-synthesis: none;
 }
+
 @theme {
   --font-halimum: "Halimum", cursive;
   --font-cinzelish: "Didot", "Bodoni 72", "Bodoni MT",
@@ -60,28 +91,47 @@ body {
 /* ===== Itinerary layout (NO snap) ===== */
 
 /* Portrait: stack items naturally with comfy spacing */
-.itin-wrap { padding: 2.5rem 0; }              /* section padding */
-.itinerary-grid { display: block; }            /* stacked cards */
+.itin-wrap {
+  padding: 2.5rem 0;
+}
+
+/* section padding */
+.itinerary-grid {
+  display: block;
+}
+
+/* stacked cards */
 .itinerary-item {
-  padding: 2.5rem 0;                           /* space between cards */
-  display: grid; place-items: center;          /* center content */
+  padding: 2.5rem 0;
+  /* space between cards */
+  display: grid;
+  place-items: center;
+  /* center content */
 }
 
 /* Landscape: show two columns; section fills viewport & is vertically centered */
 @media (orientation: landscape) {
   .itin-wrap {
-    min-height: 100dvh;                        /* entire section = viewport */
+    min-height: 100dvh;
+    /* entire section = viewport */
     display: grid;
-    align-items: center;                       /* vertical centering */
+    align-items: center;
+    /* vertical centering */
   }
+
   .itinerary-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     column-gap: 64px;
     row-gap: 0;
   }
+
   .itinerary-item {
-    padding: 0;                                /* tighter; already centered */
-    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    padding: 0;
+    /* tighter; already centered */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 }
