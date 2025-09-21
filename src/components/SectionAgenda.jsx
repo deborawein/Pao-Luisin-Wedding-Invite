@@ -18,77 +18,80 @@ export default function SectionAgenda() {
     },
   ];
 
-  return (
-    <section id="sectionAgenda" className="bg-[var(--brand-sage)]/50 text-[var(--ink)]">
-      <div className="itin-wrap mx-auto max-w-3xl md:max-w-6xl px-6">
-        <div className="mobile-itinerary md:!hidden">
-          {events.map((event) => (
-            <article
-              key={event.title}
-              className="itinerary-item"
-            >
-              <h3 className="text-2xl uppercase tracking-[0.25em] text-[var(--brand-deep)]">{event.title}</h3>
-              <img
-                src={event.img}
-                alt={event.venueScript}
-                className="w-60 h-60 object-contain drop-shadow-md"
-              />
-              <p className="font-halimum text-3xl leading-tight text-[var(--brand-cafe)] max-w-xs mx-auto">
-                {event.venueScript}
-              </p>
-              <div className="flex items-center justify-center gap-2 text-base">
-                <LocationIcon className="w-5 h-5 text-[var(--brand-forest)]/70" />
-                <span>{event.address}</span>
-              </div>
-              <div className="flex items-center justify-center gap-2 text-base">
-                <ClockIcon className="w-5 h-5 text-[var(--brand-forest)]/70" />
-                <span className="tracking-wide">{event.time}</span>
-              </div>
-              <a
-                href={event.mapUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-block rounded-full px-5 py-2 bg-[var(--brand-cafe)] text-[var(--paper)] hover:opacity-90 transition focus-no-outline focus-soft hover-brand-sage border border-transparent"
-              >
-                Ver ubicación
-              </a>
-            </article>
-          ))}
+  const renderCard = (event, variant = "mobile") => {
+    const isMobile = variant === "mobile";
+    const baseLayout = isMobile
+      ? "flex flex-col items-center gap-5"
+      : "flex h-full flex-col items-center gap-6";
+    const shellPadding = isMobile ? "px-5 py-7" : "px-9 py-10";
+    const shadow = isMobile ? "shadow-md" : "shadow-xl";
+    const imageSize = isMobile ? "w-56 h-56" : "w-56 h-56";
+
+    return (
+      <article
+        key={`${variant}-${event.title}`}
+        className={[
+          baseLayout,
+          "overflow-hidden rounded-3xl text-center text-[var(--brand-cream)]",
+          "backdrop-blur-sm border border-white/15 bg-white/5",
+          shellPadding,
+          shadow,
+          "shadow-black/20",
+        ].join(" ")}
+      >
+        <h3 className="text-2xl uppercase tracking-[0.3em] text-[var(--brand-cafe)]">
+          {event.title}
+        </h3>
+
+        <img
+          src={event.img}
+          alt={event.venueScript}
+          className={[imageSize, "object-contain drop-shadow-md mx-auto mt-6"].join(" ")}
+        />
+
+        <p className="mt-6 font-halimum text-3xl leading-tight text-[var(--brand-cream)] max-w-sm mx-auto">
+          {event.venueScript}
+        </p>
+
+        <div className="mt-4 flex items-center justify-center gap-3 text-lg">
+          <LocationIcon className="w-5 h-5 text-[var(--brand-sage)]" />
+          <span>{event.address}</span>
         </div>
 
-        <div className="desktop-itinerary hidden md:grid md:grid-cols-2 md:gap-12">
-          {events.map((event) => (
-            <article
-              key={event.title}
-              className="flex h-full flex-col items-center gap-6 rounded-3xl bg-[var(--brand-cream)]/90 px-8 py-10 text-center shadow-xl shadow-black/10 backdrop-blur-sm"
-            >
-              <h3 className="text-2xl uppercase tracking-[0.3em] text-[var(--brand-deep)]">{event.title}</h3>
-              <img
-                src={event.img}
-                alt={event.venueScript}
-                className="w-56 h-56 object-contain drop-shadow-md"
-              />
-              <p className="font-halimum text-3xl leading-tight text-[var(--brand-cafe)] max-w-sm">
-                {event.venueScript}
-              </p>
-              <div className="flex items-center justify-center gap-3 text-lg">
-                <LocationIcon className="w-5 h-5 text-[var(--brand-forest)]/70" />
-                <span>{event.address}</span>
-              </div>
-              <div className="flex items-center justify-center gap-2 text-lg">
-                <ClockIcon className="w-5 h-5 text-[var(--brand-forest)]/70" />
-                <span className="tracking-wide">{event.time}</span>
-              </div>
-              <a
-                href={event.mapUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-block rounded-full px-6 py-2 bg-[var(--brand-cafe)] text-[var(--paper)] hover:opacity-90 transition focus-no-outline focus-soft hover-brand-sage border border-transparent"
-              >
-                Ver ubicación
-              </a>
-            </article>
-          ))}
+        <div className="mt-2 flex items-center justify-center gap-2 text-lg">
+          <ClockIcon className="w-5 h-5 text-[var(--brand-sage)]" />
+          <span className="tracking-wide">{event.time}</span>
+        </div>
+
+        <a
+          href={event.mapUrl}
+          target="_blank"
+          rel="noreferrer"
+          className="mt-6 inline-block rounded-full px-6 py-2 bg-[var(--brand-cafe)] text-[var(--paper)] hover:opacity-90 transition focus-no-outline focus-soft hover-brand-sage border border-transparent"
+        >
+          Ver ubicación
+        </a>
+      </article>
+    );
+  };
+
+  return (
+    <section id="sectionAgenda" className="bg-[var(--brand-sage)]/50 text-[var(--ink)]">
+      <div className="relative">
+        <div aria-hidden className="absolute inset-0 -z-30 bg-[var(--brand-deep)]/55" />
+        <div
+          aria-hidden
+          className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_top,_rgba(34,78,50,0.35)_0%,_rgba(17,44,27,0.58)_55%,_rgba(10,28,17,0.72)_100%)]"
+        />
+
+        <div className="relative z-10 itin-wrap mx-auto max-w-3xl md:max-w-6xl px-3 md:px-6">
+          <div className="mobile-itinerary md:!hidden space-y-6 pt-16">
+            {events.map((event) => renderCard(event, "mobile"))}
+          </div>
+
+          <div className="desktop-itinerary hidden md:grid md:grid-cols-2 md:gap-12 pt-20">
+            {events.map((event) => renderCard(event, "desktop"))}
+          </div>
         </div>
       </div>
     </section>
