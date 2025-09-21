@@ -64,7 +64,7 @@ export default function SectionAgenda() {
             <span>{event.address}</span>
           </div>
 
-          <div className="flex min-h-[2.5rem] w-full items-center justify-center gap-2 text-lg">
+          <div className="flex min-h-[2.5rem] w-full items-center justify-center gap-2 text-lg md:mb-6">
             <ClockIcon className="w-5 h-5 text-[var(--brand-sage)]" />
             <span className="tracking-wide">{event.time}</span>
           </div>
@@ -74,7 +74,7 @@ export default function SectionAgenda() {
           href={event.mapUrl}
           target="_blank"
           rel="noreferrer"
-          className="mt-8 md:mt-auto inline-block rounded-full px-6 py-2 bg-[var(--brand-cafe)] text-[var(--paper)] hover:opacity-90 transition focus-no-outline focus-soft hover-brand-sage border border-transparent"
+          className="mt-6 md:mt-auto inline-block rounded-full px-6 py-2 bg-[var(--brand-cafe)] text-[var(--paper)] hover:opacity-90 transition focus-no-outline focus-soft hover-brand-sage border border-transparent"
         >
           Ver ubicación
         </a>
