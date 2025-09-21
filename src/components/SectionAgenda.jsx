@@ -26,6 +26,7 @@ export default function SectionAgenda() {
     const shellPadding = isMobile ? "px-5 py-7" : "px-9 py-10";
     const shadow = isMobile ? "shadow-md" : "shadow-xl";
     const imageSize = isMobile ? "w-56 h-56" : "w-56 h-56";
+    const cardMargin = isMobile ? "mx-4" : "";
 
     return (
       <article
@@ -33,10 +34,11 @@ export default function SectionAgenda() {
         className={[
           baseLayout,
           "overflow-hidden rounded-3xl text-center text-[var(--brand-cream)]",
-          "backdrop-blur-sm border border-white/15 bg-white/5",
+          "backdrop-blur-sm border border-white/5 bg-white/5",
           shellPadding,
           shadow,
           "shadow-black/20",
+          cardMargin,
         ].join(" ")}
       >
         <h3 className="text-2xl uppercase tracking-[0.3em] text-[var(--brand-cafe)]">
@@ -85,11 +87,16 @@ export default function SectionAgenda() {
         />
 
         <div className="relative z-10 itin-wrap mx-auto max-w-3xl md:max-w-6xl px-3 md:px-6">
-          <div className="mobile-itinerary md:!hidden space-y-6 pt-16">
+          <header className="mt-10 text-center">
+            <p className="text-sm uppercase tracking-[0.4em] text-[var(--brand-forest)]/55">Nuestra</p>
+            <h2 className="mt-3 text-3xl md:text-4xl font-halimum text-[var(--brand-cafe)]">Agenda</h2>
+          </header>
+
+          <div className="mobile-itinerary md:!hidden space-y-6 py-16">
             {events.map((event) => renderCard(event, "mobile"))}
           </div>
 
-          <div className="desktop-itinerary hidden md:grid md:grid-cols-2 md:gap-12 pt-20">
+          <div className="desktop-itinerary hidden md:grid md:grid-cols-2 md:gap-12 pt-20 pb-20">
             {events.map((event) => renderCard(event, "desktop"))}
           </div>
         </div>
