@@ -88,7 +88,7 @@ export default function SectionItinerary() {
         <div className="mobile-itinerary md:!hidden">
           {events.map((event) => (
             <article key={event.title} className="itinerary-item">
-              <h3 className="text-xl uppercase tracking-[0.2em]">{event.title}</h3>
+              <h3 className="text-2xl uppercase tracking-[0.2em]">{event.title}</h3>
               <img
                 src={event.img}
                 alt={event.venueScript}
