@@ -1,7 +1,4 @@
-import { Fragment } from "react";
-
 export default function SectionAgenda() {
-  // Details shown on the itinerary cards.
   const events = [
     {
       title: "Ceremonia Religiosa",
@@ -21,72 +18,6 @@ export default function SectionAgenda() {
     },
   ];
 
-  const desktopRows = [
-    {
-      key: "title",
-      cellClass: "flex items-center justify-center text-center h-full",
-      render: (event) => (
-        <h3 className="text-2xl uppercase tracking-[0.35em]">
-          {event.title}
-        </h3>
-      ),
-    },
-    {
-      key: "image",
-      cellClass: "flex items-center justify-center h-full",
-      render: (event) => (
-        <img
-          src={event.img}
-          alt={event.venueScript}
-          className="w-60 aspect-square object-contain drop-shadow-md"
-        />
-      ),
-    },
-    {
-      key: "venue",
-      cellClass: "flex items-center justify-center text-center h-full",
-      render: (event) => (
-        <p className="font-halimum text-3xl leading-tight text-[var(--brand-cafe)] max-w-xs">
-          {event.venueScript}
-        </p>
-      ),
-    },
-    {
-      key: "address",
-      cellClass: "flex items-center justify-center text-center gap-3 h-full",
-      render: (event) => (
-        <div className="flex items-center justify-center gap-3 text-lg">
-          <LocationIcon className="w-5 h-5 text-[var(--brand-forest)]/70" />
-          <span>{event.address}</span>
-        </div>
-      ),
-    },
-    {
-      key: "time",
-      cellClass: "flex items-center justify-center text-center h-full",
-      render: (event) => (
-        <div className="flex items-center justify-center gap-2 text-lg">
-          <ClockIcon className="w-5 h-5 text-[var(--brand-forest)]/70" />
-          <span className="tracking-wide">{event.time}</span>
-        </div>
-      ),
-    },
-    {
-      key: "cta",
-      cellClass: "flex items-center justify-center h-full",
-      render: (event) => (
-        <a
-          href={event.mapUrl}
-          target="_blank"
-          rel="noreferrer"
-          className="inline-block rounded-full px-6 py-2 bg-[var(--brand-cafe)] text-[var(--paper)] hover:opacity-90 transition focus-no-outline focus-soft hover-brand-sage border border-transparent"
-        >
-          Ver ubicación
-        </a>
-      ),
-    },
-  ];
-
   return (
     <section id="sectionAgenda" className="bg-[var(--brand-sage)]/50 text-[var(--ink)]">
       <div className="itin-wrap mx-auto max-w-3xl md:max-w-6xl px-6">
@@ -94,7 +25,7 @@ export default function SectionAgenda() {
           {events.map((event) => (
             <article
               key={event.title}
-              className="itinerary-item rounded-3xl bg-[var(--brand-cream)]/90 px-6 py-8 shadow-lg shadow-black/10"
+              className="itinerary-item"
             >
               <h3 className="text-2xl uppercase tracking-[0.25em] text-[var(--brand-deep)]">{event.title}</h3>
               <img
@@ -125,20 +56,38 @@ export default function SectionAgenda() {
           ))}
         </div>
 
-        <div className="desktop-itinerary hidden md:grid md:grid-cols-2 md:gap-x-16 md:gap-y-10 justify-items-center items-stretch text-center">
-          {desktopRows.map((row) => (
-            <Fragment key={row.key}>
-              {events.map((event) => (
-                <div
-                  key={`${row.key}-${event.title}`}
-                  className={["flex h-full w-full", row.cellClass ?? "items-center justify-center text-center"].join(" ")}
-                >
-                  <div className="w-full rounded-3xl bg-[var(--brand-cream)]/85 px-6 py-8 shadow-md shadow-black/10 backdrop-blur-sm">
-                    {row.render(event)}
-                  </div>
-                </div>
-              ))}
-            </Fragment>
+        <div className="desktop-itinerary hidden md:grid md:grid-cols-2 md:gap-12">
+          {events.map((event) => (
+            <article
+              key={event.title}
+              className="flex h-full flex-col items-center gap-6 rounded-3xl bg-[var(--brand-cream)]/90 px-8 py-10 text-center shadow-xl shadow-black/10 backdrop-blur-sm"
+            >
+              <h3 className="text-2xl uppercase tracking-[0.3em] text-[var(--brand-deep)]">{event.title}</h3>
+              <img
+                src={event.img}
+                alt={event.venueScript}
+                className="w-56 h-56 object-contain drop-shadow-md"
+              />
+              <p className="font-halimum text-3xl leading-tight text-[var(--brand-cafe)] max-w-sm">
+                {event.venueScript}
+              </p>
+              <div className="flex items-center justify-center gap-3 text-lg">
+                <LocationIcon className="w-5 h-5 text-[var(--brand-forest)]/70" />
+                <span>{event.address}</span>
+              </div>
+              <div className="flex items-center justify-center gap-2 text-lg">
+                <ClockIcon className="w-5 h-5 text-[var(--brand-forest)]/70" />
+                <span className="tracking-wide">{event.time}</span>
+              </div>
+              <a
+                href={event.mapUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-block rounded-full px-6 py-2 bg-[var(--brand-cafe)] text-[var(--paper)] hover:opacity-90 transition focus-no-outline focus-soft hover-brand-sage border border-transparent"
+              >
+                Ver ubicación
+              </a>
+            </article>
           ))}
         </div>
       </div>
