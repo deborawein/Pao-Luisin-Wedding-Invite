@@ -45,14 +45,15 @@ export default function SectionCodigoVestimenta() {
             ))}
           </div>
 
-          <span
-            style={{ backgroundColor: COLOR_SWATCHES[5] }}
-            className="h-12 w-12 mt-14 rounded-full border border-white/40 shadow-[0_8px_15px_rgba(0,0,0,0.25)]"
-          />
-
-          <p className="mt-2 text-center text-[6vw] md:text-4xl font-halimum text-[var(--paper)]/90">
-            El blanco<br/>brilla sólo para<br/>la novia
-          </p>
+          <div className="flex items-center justify-center gap-3">
+            <span
+              style={{ backgroundColor: COLOR_SWATCHES[5] }}
+              className="h-12 w-12 rounded-full border border-white/40 shadow-[0_8px_15px_rgba(0,0,0,0.25)]"
+            />
+            <p className="mt-2 text-[6vw] md:text-4xl font-halimum text-[var(--paper)]/90 leading-tight">
+              El blanco<br/>brilla sólo para<br/>la novia
+            </p>
+          </div>
         </div>
 
         <div className="mt-12 grid gap-8 md:grid-cols-2 md:gap-12">
