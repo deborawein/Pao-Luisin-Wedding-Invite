@@ -26,15 +26,15 @@ export default function SectionCodigoVestimenta() {
           CÓDIGO DE VESTIMENTA
         </h2>
 
-        <p className="mt-6 text-center text-[8vw] md:text-4xl font-halimum text-[var(--paper)]/95">
+        <p className="mt-10 text-center text-[8vw] md:text-4xl font-halimum text-[var(--paper)]/95">
           Formal,<br/>Elegante,<br/>Espectacular
         </p>
 
-        <p className="mt-6 max-w-3xl text-center text-sm md:text-base tracking-wide text-[var(--paper)]/85">
+        <p className="mt-10 max-w-3xl text-center text-sm md:text-base tracking-wide text-[var(--paper)]/85">
           Algunos colores se han destinado con cariño a personas únicas en nuestra historia, agradecemos no usarlos la noche del evento.
         </p>
 
-        <div className="mt-8 flex flex-col items-center gap-6">
+        <div className="mt-10 flex flex-col items-center gap-6">
           <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6">
             {COLOR_SWATCHES.slice(0, 5).map((color) => (
               <span
@@ -47,10 +47,10 @@ export default function SectionCodigoVestimenta() {
 
           <span
             style={{ backgroundColor: COLOR_SWATCHES[5] }}
-            className="h-12 w-12 mt-9 rounded-full border border-white/40 shadow-[0_8px_15px_rgba(0,0,0,0.25)]"
+            className="h-12 w-12 mt-14 rounded-full border border-white/40 shadow-[0_8px_15px_rgba(0,0,0,0.25)]"
           />
 
-          <p className="text-center text-[6vw] md:text-4xl font-halimum text-[var(--paper)]/90">
+          <p className="mt-2 text-center text-[6vw] md:text-4xl font-halimum text-[var(--paper)]/90">
             El blanco<br/>brilla sólo para<br/>la novia
           </p>
         </div>
@@ -71,13 +71,13 @@ export default function SectionCodigoVestimenta() {
         <img
           src="/vestimenta/bebidas.png"
           alt="Brindis"
-          className="mt-14 h-46 w-auto object-contain drop-shadow-[0_18px_35px_rgba(33,17,5,0.4)]"
+          className="mt-16 h-46 w-auto object-contain drop-shadow-[0_18px_35px_rgba(33,17,5,0.4)]"
         />
 
-        <p className="mt-6 text-center text-2xl tracking-[0.3em] text-[var(--brand-caramel)]">
+        <p className="mt-10 text-center text-2xl tracking-[0.3em] text-[var(--brand-caramel)]">
           EVENTO SÓLO PARA
         </p>
-        <p className="mt-3 text-center text-[8vw] md:text-4xl font-halimum text-[var(--brand-cream)]/95">
+        <p className="mt-4 text-center text-[8vw] md:text-4xl font-halimum text-[var(--brand-cream)]/95">
           Adultos
         </p>
       </div>
