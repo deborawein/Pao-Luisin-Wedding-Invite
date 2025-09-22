@@ -34,7 +34,7 @@ export default function SectionCodigoVestimenta() {
           Algunos colores se han destinado con cariño a personas únicas en nuestra historia, agradecemos no usarlos la noche del evento.
         </p>
 
-        <div className="mt-10 flex flex-col items-center gap-6">
+        <div className="mt-10 flex flex-col items-center gap-8">
           <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6">
             {COLOR_SWATCHES.slice(0, 5).map((color) => (
               <span
@@ -45,12 +45,16 @@ export default function SectionCodigoVestimenta() {
             ))}
           </div>
 
-          <div className="flex items-center justify-center gap-3">
-            <span
-              style={{ backgroundColor: COLOR_SWATCHES[5] }}
-              className="h-12 w-12 rounded-full border border-white/40 shadow-[0_8px_15px_rgba(0,0,0,0.25)]"
-            />
-            <p className="mt-2 text-[6vw] md:text-4xl font-halimum text-[var(--paper)]/90 leading-tight">
+          <div className="relative flex w-full max-w-md flex-col items-center gap-4">
+            <div className="flex items-center gap-3 rounded-full border border-[var(--brand-caramel)]/40 bg-[rgba(125,69,32,0.15)] px-4 py-1 text-xs font-semibold tracking-[0.35em] text-[var(--brand-caramel)] shadow-[0_8px_15px_rgba(0,0,0,0.25)]">
+              <span
+                style={{ backgroundColor: COLOR_SWATCHES[5] }}
+                className="h-8 w-8 rounded-full border border-white/60 shadow-[0_6px_12px_rgba(0,0,0,0.25)]"
+              />
+              <span className="text-center text-[6vw] md:text-4xl font-halimum text-[var(--paper)]/90 leading-tight">Reservado para Pao</span>
+            </div>
+
+            <p className="text-center text-[6vw] md:text-4xl font-halimum text-[var(--paper)]/90 leading-tight">
               El blanco<br/>brilla sólo para<br/>la novia
             </p>
           </div>
