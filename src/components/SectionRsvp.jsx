@@ -7,7 +7,7 @@ export default function SectionRsvp() {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(26,45,32,0.65),_rgba(15,33,20,0.85)_75%)]" aria-hidden />
 
       <div className="relative mx-auto flex min-h-screen w-full max-w-6xl flex-col items-center gap-12 px-6 py-20 text-center lg:flex-row lg:items-center lg:gap-16 lg:text-left">
-        <div className="flex w-full flex-1 flex-col items-center gap-8 text-center lg:items-start lg:text-left">
+        <div className="flex w-full flex-1 flex-col items-center gap-8 text-center">
           <header className="space-y-3">
             <p className="text-sm uppercase tracking-[0.4em] text-[var(--brand-sage)]/70">Confirma tu asistencia</p>
             <h2 className="text-[8vw] md:text-[3vw] font-halimum text-[var(--brand-caramel)]">
@@ -20,14 +20,14 @@ export default function SectionRsvp() {
             Ojalá puedas acompañarnos en este día tan especial.
           </p>
 
-          <div className="flex flex-col items-center gap-3 lg:items-start lg:text-left">
+          <div className="flex flex-col items-center gap-3">
             <p className="text-xs uppercase tracking-[0.35em] text-[var(--brand-sage)]/80">Fecha límite</p>
             <p className="border border-[var(--brand-caramel)]/40 bg-[rgba(189,140,87,0.18)] px-6 py-2 text-lg font-semibold tracking-[0.2em] text-[var(--brand-caramel)]">
               Confirma antes del 30/11/2025
             </p>
           </div>
 
-          <p className="max-w-xl text-center font-halimum text-2xl text-[var(--paper)]/90 lg:text-left">
+          <p className="max-w-xl text-center font-halimum text-2xl text-[var(--paper)]/90">
             Tu presencia es el mejor regalo.<br />¡Gracias por hacernos parte de tus planes!
           </p>
 
