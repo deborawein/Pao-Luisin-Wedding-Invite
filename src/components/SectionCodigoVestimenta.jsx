@@ -34,7 +34,7 @@ export default function SectionCodigoVestimenta() {
           Algunos colores se han destinado con cariño a personas únicas en nuestra historia, agradecemos no usarlos la noche del evento.
         </p>
 
-        <div className="mt-10 flex flex-col items-center gap-6">
+        <div className="mt-10 flex flex-col items-center gap-10">
           <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6">
             {COLOR_SWATCHES.slice(0, 5).map((color) => (
               <span
@@ -45,14 +45,15 @@ export default function SectionCodigoVestimenta() {
             ))}
           </div>
 
-          <span
-            style={{ backgroundColor: COLOR_SWATCHES[5] }}
-            className="h-12 w-12 mt-14 rounded-full border border-white/40 shadow-[0_8px_15px_rgba(0,0,0,0.25)]"
-          />
+          <div className="flex flex-col items-center gap-4">
+            <div className="relative flex h-24 w-24 items-center justify-center rounded-[22px] border-4 border-[rgba(139,94,50,0.85)] bg-[radial-gradient(circle,_rgba(206,165,120,0.45)_0%,_rgba(170,130,85,0.55)_55%,_rgba(114,78,39,0.75)_100%)] shadow-[0_18px_35px_rgba(33,17,5,0.35)]">
+              <span className="h-12 w-12 rounded-full border border-white/60 bg-white shadow-[0_6px_12px_rgba(0,0,0,0.25)]" />
+            </div>
 
-          <p className="mt-2 text-center text-[6vw] md:text-4xl font-halimum text-[var(--paper)]/90">
-            El blanco<br/>brilla sólo para<br/>la novia
-          </p>
+            <p className="text-center text-[6vw] md:text-4xl font-halimum text-[var(--paper)]/90 leading-tight">
+              El blanco<br/>brilla sólo para<br/>la novia
+            </p>
+          </div>
         </div>
 
         <div className="mt-12 grid gap-8 md:grid-cols-2 md:gap-12">
