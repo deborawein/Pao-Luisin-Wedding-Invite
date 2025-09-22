@@ -78,7 +78,7 @@ export default function SectionAgenda() {
             <h2 className="mt-3 text-[8vw] md:text-4xl font-halimum text-[var(--brand-cafe)]">Agenda</h2>
           </header>
 
-          <div className="agenda-grid mt-12 grid w-full gap-8">
+          <div className="agenda-grid mt-12 grid w-full gap-8 justify-items-center">
             {events.map((event) => renderCard(event))}
           </div>
         </div>

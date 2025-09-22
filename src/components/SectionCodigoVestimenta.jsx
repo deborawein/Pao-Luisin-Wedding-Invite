@@ -19,7 +19,7 @@ export default function SectionCodigoVestimenta() {
         <img
           src="/vestimenta/vestimenta.png"
           alt="Moño y zapato"
-          className="h-40 w-auto object-contain drop-shadow-[0_18px_35px_rgba(33,17,5,0.4)]"
+          className="h-46 w-auto object-contain drop-shadow-[0_18px_35px_rgba(33,17,5,0.4)]"
         />
 
         <h2 className="mt-10 text-center text-3xl md:text-4xl tracking-[0.3em] text-[var(--brand-caramel)]">
@@ -27,7 +27,7 @@ export default function SectionCodigoVestimenta() {
         </h2>
 
         <p className="mt-6 text-center text-[8vw] md:text-4xl font-halimum text-[var(--paper)]/95">
-          Formal, Elegante, Espectacular
+          Formal,<br/>Elegante,<br/>Espectacular
         </p>
 
         <p className="mt-6 max-w-3xl text-center text-sm md:text-base tracking-wide text-[var(--paper)]/85">
@@ -45,17 +45,14 @@ export default function SectionCodigoVestimenta() {
             ))}
           </div>
 
-          <div className="flex items-start gap-4">
-            <div className="mt-1 flex h-12 w-12 items-start justify-center">
-              <span
-                style={{ backgroundColor: COLOR_SWATCHES[5] }}
-                className="h-12 w-12 rounded-full border border-white/40 shadow-[0_8px_15px_rgba(0,0,0,0.25)]"
-              />
-            </div>
-            <p className="text-left md:text-center text-[6vw] md:text-4xl font-halimum text-[var(--paper)]/90 leading-tight">
-              El blanco<br/>brilla sólo para<br/>la novia
-            </p>
-          </div>
+          <span
+            style={{ backgroundColor: COLOR_SWATCHES[5] }}
+            className="h-12 w-12 mt-9 rounded-full border border-white/40 shadow-[0_8px_15px_rgba(0,0,0,0.25)]"
+          />
+
+          <p className="text-center text-[6vw] md:text-4xl font-halimum text-[var(--paper)]/90">
+            El blanco<br/>brilla sólo para<br/>la novia
+          </p>
         </div>
 
         <div className="mt-12 grid gap-8 md:grid-cols-2 md:gap-12">
@@ -74,7 +71,7 @@ export default function SectionCodigoVestimenta() {
         <img
           src="/vestimenta/bebidas.png"
           alt="Brindis"
-          className="mt-14 h-36 w-auto object-contain drop-shadow-[0_18px_35px_rgba(33,17,5,0.4)]"
+          className="mt-14 h-46 w-auto object-contain drop-shadow-[0_18px_35px_rgba(33,17,5,0.4)]"
         />
 
         <p className="mt-6 text-center text-2xl tracking-[0.3em] text-[var(--brand-caramel)]">

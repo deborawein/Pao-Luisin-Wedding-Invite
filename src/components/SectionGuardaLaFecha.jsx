@@ -41,11 +41,11 @@ export default function SectionGuardaLaFecha() {
       </div>
 
       {/* === Row 2: countdown band (tinted) === */}
-      <div className="relative md:pb-6 pb-24">
+      <div className="relative">
         {/* overlay behind content */}
         <div className="absolute inset-0 -z-30 bg-[var(--brand-deep)]" />
         {/* content above overlay */}
-        <div className="relative z-10 mx-auto max-w-6xl px-6 md:px-10 lg:px-12 py-12 md:py-20 text-center text-[var(--brand-cream)]">
+        <div className="relative z-10 mx-auto max-w-6xl px-6 md:px-10 lg:px-12 py-12 md:py-20 flex flex-col items-center justify-center text-center text-[var(--brand-cream)] min-h-[360px]">
           <h3 className="text-[10vw] md:text-5xl mb-3 font-halimum text-[var(--brand-cafe)]">Faltan</h3>
           <Countdown targetISO={EVENT_ISO} />
           <p className="mt-4 text-[4vw] md:text-2xl text-[var(--brand-cafe)] tracking-[0.35em] font-light">SÁBADO 10 DE ENERO DE 2026</p>
