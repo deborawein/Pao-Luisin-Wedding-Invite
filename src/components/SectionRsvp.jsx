@@ -16,8 +16,8 @@ export default function SectionRsvp() {
           </header>
 
           <p className="max-w-2xl text-base md:text-lg leading-relaxed text-[var(--brand-forest)]/85">
-            Esperamos compartir risas, abrazos y un brindis lleno de cariño con quienes han sido parte de nuestra historia.
-            Ojalá puedas acompañarnos en este día tan especial.
+            Queremos compartir risas, abrazos y un brindis lleno de cariño contigo, tu presencia es el mejor regalo.
+            Gracias por hacernos parte de tus planes.
           </p>
 
           <div className="flex flex-col items-center gap-3">
@@ -26,10 +26,6 @@ export default function SectionRsvp() {
               Confirma antes del 30/11/2025
             </p>
           </div>
-
-          <p className="max-w-xl text-center text-2xl text-[var(--brand-forest)]/90">
-            Tu presencia es el mejor regalo.<br />¡Gracias por hacernos parte de tus planes!
-          </p>
 
           <a
             href="https://tally.so/r/3E9PV4"
