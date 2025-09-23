@@ -2,7 +2,7 @@ export default function SectionRsvp() {
   return (
     <section
       id="sectionRsvp"
-      className="relative min-h-screen snap-start bg-[var(--brand-sage)]/80 text-[var(--paper)]"
+      className="relative min-h-screen snap-start bg-[var(--brand-deep)]/80 text-[var(--paper)]"
     >
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(26,45,32,0.65),_rgba(15,33,20,0.85)_75%)]" aria-hidden />
 
