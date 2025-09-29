@@ -4,15 +4,15 @@ export default function SectionAgenda() {
       title: "Ceremonia Religiosa",
       img: "/itinerary/ceremonia.png",
       venueScript: "Urbanización Prados del Este",
-      address: "Avenida 7 #5–54",
+      address: "Av. 7 #5-54, Cúcuta, COL",
       time: "04:30PM",
       mapUrl: "https://maps.google.com/?q=Avenida+7+5-54+Cúcuta",
     },
     {
       title: "Recepción",
       img: "/itinerary/reception.png",
-      venueScript: "Los Cabos",
-      address: "Cl. 11 #2E–75",
+      venueScript: "Hotel Casino Internacional",
+      address: "Cl. 11 #2E-75, Los Caobos, Cúcuta, COL",
       time: "07:30PM",
       mapUrl: "https://maps.google.com/?q=Cl+11+2E-75+Cúcuta",
     },
@@ -21,7 +21,7 @@ export default function SectionAgenda() {
   const renderCard = (event) => (
     <article
       key={event.title}
-      className="flex h-full w-full max-w-[430px] flex-col items-center text-center overflow-hidden rounded-3xl text-[var(--brand-cream)] backdrop-blur-xs border border-white/10 bg-white/10 px-5 py-10 md:px-8 md:py-10 shadow-lg shadow-black/20"
+      className="flex h-full w-full max-w-[430px] flex-col items-center text-center overflow-hidden rounded-3xl text-[var(--brand-forest)]/70 backdrop-blur-xs border border-white/10 bg-white/10 px-5 py-10 md:px-8 md:py-10 shadow-lg shadow-black/20"
     >
       <div className="flex w-full flex-col items-center gap-6">
         <div className="flex min-h-[2.75rem] w-full items-center justify-center">
@@ -39,18 +39,18 @@ export default function SectionAgenda() {
         </div>
 
         <div className="flex h-[5.25rem] w-full items-center justify-center">
-          <p className="font-halimum text-3xl leading-tight text-[var(--brand-cream)] max-w-sm text-balance text-center">
+          <p className="font-halimum text-3xl leading-tight text-[var(--brand-forest)] max-w-sm text-balance text-center">
             {event.venueScript}
           </p>
         </div>
 
         <div className="flex min-h-[2.75rem] w-full items-center justify-center gap-3 text-lg">
-          <LocationIcon className="w-5 h-5 text-[var(--brand-forest)]/70" />
+          <LocationIcon className="w-5 h-5 text-[var(--brand-sage)]/70" />
           <span>{event.address}</span>
         </div>
 
         <div className="flex min-h-[2.5rem] w-full items-center justify-center gap-2 text-lg">
-          <ClockIcon className="w-5 h-5 text-[var(--brand-forest)]/70" />
+          <ClockIcon className="w-5 h-5 text-[var(--brand-sage)]/70" />
           <span className="tracking-wide">{event.time}</span>
         </div>
       </div>
@@ -67,7 +67,7 @@ export default function SectionAgenda() {
   );
 
   return (
-    <section id="sectionAgenda" className="bg-[var(--brand-sage)]/50 text-[var(--ink)]">
+    <section id="sectionAgenda" className="bg-[var(--brand-cream)]/70 text-[var(--ink)]">
       <div className="relative">
         <div aria-hidden className="absolute inset-0 -z-30 bg-[var(--brand-deep)]/35" />
         <div aria-hidden className="absolute inset-0 -z-20 bg-[var(--brand-forest)]/35" />
