@@ -1,9 +1,56 @@
 // SectionGuardaLaFecha.jsx
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import Photo from "/saveTheDate.jpg";
+
+const ICS_EVENT = [
+  "BEGIN:VCALENDAR",
+  "VERSION:2.0",
+  "PRODID:-//PaoLuisin//Wedding Invite//ES",
+  "CALSCALE:GREGORIAN",
+  "BEGIN:VEVENT",
+  "DTSTAMP:20241014T000000Z",
+  "UID:pao-luisi-boda-20260110@paoluisin.com",
+  "DTSTART:20260110T213000Z",
+  "DTEND:20260111T040000Z",
+  "SUMMARY:Boda de Pao & Luisi",
+  "LOCATION:Av. 7 #5-54\\, Cúcuta\\, Colombia",
+  "DESCRIPTION:Celebración de nuestra boda en Urbanización Prados del Este y recepción en Hotel Casino Internacional.\\nHorario: 4:30 p.m. - 11:00 p.m. (hora de Cúcuta)",
+  "END:VEVENT",
+  "END:VCALENDAR",
+].join("\r\n");
 
 export default function SectionGuardaLaFecha() {
   const EVENT_ISO = "2026-01-10T00:00:00-05:00";
+
+  const downloadCalendar = useCallback(() => {
+    if (typeof window === "undefined" || typeof navigator === "undefined") {
+      return;
+    }
+
+    const isIOS = /iP(ad|hone|od)/i.test(navigator.userAgent);
+    const isChromeIOS = /CriOS/i.test(navigator.userAgent);
+
+    if (isIOS) {
+      const calendarPath = "/pao-luisi-boda.ics";
+      if (isChromeIOS) {
+        window.open(calendarPath, "_blank");
+      } else {
+        window.location.href = calendarPath;
+      }
+      return;
+    }
+
+    const dataUrl = `data:text/calendar;charset=utf-8,${encodeURIComponent(ICS_EVENT)}`;
+    const blob = new Blob([ICS_EVENT], { type: "text/calendar;charset=utf-8" });
+    const url = URL.createObjectURL(blob);
+    const anchor = document.createElement("a");
+    anchor.href = url;
+    anchor.download = "pao-luisi-boda.ics";
+    document.body.appendChild(anchor);
+    anchor.click();
+    anchor.remove();
+    URL.revokeObjectURL(url);
+  }, []);
 
   return (
     <section id="sectionGuardaLaFecha" className="bg-[var(--brand-cream)]/70">
@@ -11,22 +58,48 @@ export default function SectionGuardaLaFecha() {
         className="mx-auto max-w-6xl px-6 md:px-10 lg:px-12 pt-16 pb-12 md:py-20 grid md:grid-cols-2 gap-10 items-center justify-items-center md:justify-items-stretch"
       >
         {/* Left column — title + sentence */}
-        <div className="text-center">
+        <div className="text-left">
           {/* Script title */}
           <h3 className="font-halimum pt-10 md:pt-0 pb-6 text-[8vw] md:text-4xl leading-none text-[var(--brand-cafe)]">
             <span className="block">¡Nos casamos</span>
             <span className="block mt-4">en Colombia!</span>
           </h3>
 
-          <div className="mx-auto md:mx-0 max-w-prose">
-            <p className="text-base md:text-lg mt-4 leading-relaxed font-light">
+          <div className="max-w-prose">
+            <p className="text-lg md:text-xl mt-4 leading-relaxed font-light">
               Con inmensa felicidad te invitamos a nuestra boda, donde después de tanto
               tiempo lejos de nuestros seres queridos, volvemos a abrazarnos y a celebrar
               nuestro amor frente a Dios y frente a ustedes.
             </p>
+            <div className="mt-10 flex items-start text-[var(--brand-cafe)]">
+              <div className="flex items-start gap-4 sm:gap-6">
+                <div className="flex flex-col items-center">
+                  <span className="h-4 w-4 rounded-full bg-[var(--brand-cafe)] ring-4 ring-[var(--brand-cream)]/70 shadow-md" />
+                  <span className="mt-3 h-24 w-px bg-[var(--brand-sage)]/50" />
+                </div>
+                <div className="text-left">
+                  <span className="uppercase tracking-[0.32em] text-sm md:text-base font-light text-[var(--brand-forest)]/70">
+                    Guarda la fecha
+                  </span>
+                  <p className="mt-3 text-xl md:text-3xl font-medium uppercase tracking-[0.28em] text-[var(--brand-cafe)]">
+                    Sábado 10 de enero de 2026
+                  </p>
+                  <p className="mt-2 text-base md:text-lg italic text-[var(--brand-forest)]/70">
+                    El inicio de toda una vida juntos
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="mt-8">
+              <button
+                type="button"
+                onClick={downloadCalendar}
+                className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-full border border-[var(--brand-cafe)]/25 bg-[var(--brand-cafe)] px-6 py-3 text-sm sm:text-base uppercase tracking-[0.18em] text-[var(--brand-cream)] shadow-lg shadow-[var(--brand-cafe)]/20 transition-transform duration-200 hover:-translate-y-0.5 hover:bg-[var(--brand-deep)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--brand-cafe)]"
+              >
+                Añadir al calendario
+              </button>
+            </div>
           </div>
-
-          <div className="mt-6 h-px w-40 md:w-56 bg-[var(--brand-sage)]/60 mx-auto" />
         </div>
 
         {/* Right column — image */}
@@ -48,7 +121,6 @@ export default function SectionGuardaLaFecha() {
         <div className="relative z-10 mx-auto max-w-6xl px-6 md:px-10 lg:px-12 py-12 md:py-20 flex flex-col items-center justify-center text-center text-[var(--brand-cream)] min-h-[360px]">
           <h3 className="text-[10vw] md:text-5xl mb-3 font-halimum text-[var(--brand-cafe)]">Faltan</h3>
           <Countdown targetISO={EVENT_ISO} />
-          <p className="mt-4 text-[4vw] md:text-2xl text-[var(--brand-cafe)] tracking-[0.35em] font-light">SÁBADO 10 DE ENERO DE 2026</p>
         </div>
       </div>
     </section>

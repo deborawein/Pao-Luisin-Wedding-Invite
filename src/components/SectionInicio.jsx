@@ -6,6 +6,7 @@ const CAROUSEL_IMAGES = [
     "/inicio/carrosel1.jpg",
     "/inicio/carrosel2.jpg",
     "/inicio/carrosel3.jpg",
+    "/inicio/carrosel4.jpg",
 ];
 const ROTATION_INTERVAL_MS = 2000;
 
@@ -75,7 +76,7 @@ export default function SectionInicio() {
                 <span aria-hidden="true">&#8249;</span>
             </button>
 
-            <div className="absolute inset-0 z-10 bg-black/60 pointer-events-none" />
+            <div className="absolute inset-0 z-10 bg-black/30 pointer-events-none" />
 
             <div className="relative z-20 text-center">
                 <img

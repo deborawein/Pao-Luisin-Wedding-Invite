@@ -5,7 +5,7 @@ export default function SectionAgenda() {
       img: "/itinerary/ceremonia.png",
       venueScript: "Urbanización Prados del Este",
       address: "Av. 7 #5-54, Cúcuta, COL",
-      time: "04:30PM",
+      time: "16:30",
       mapUrl: "https://maps.google.com/?q=Avenida+7+5-54+Cúcuta",
     },
     {
@@ -13,7 +13,7 @@ export default function SectionAgenda() {
       img: "/itinerary/reception.png",
       venueScript: "Hotel Casino Internacional",
       address: "Cl. 11 #2E-75, Los Caobos, Cúcuta, COL",
-      time: "07:30PM",
+      time: "19:30",
       mapUrl: "https://maps.google.com/?q=Cl+11+2E-75+Cúcuta",
     },
   ];
@@ -21,11 +21,11 @@ export default function SectionAgenda() {
   const renderCard = (event) => (
     <article
       key={event.title}
-      className="flex h-full w-full max-w-[430px] flex-col items-center text-center overflow-hidden rounded-3xl text-[var(--brand-forest)]/70 backdrop-blur-xs border border-white/10 bg-white/10 px-5 py-10 md:px-8 md:py-10 shadow-lg shadow-black/20"
+      className="flex h-full w-full max-w-[430px] flex-col items-center text-center overflow-hidden rounded-3xl text-[var(--brand-forest)]/80 backdrop-blur-xs border border-white/10 bg-white/10 px-6 py-12 md:px-9 md:py-12 shadow-lg shadow-black/15"
     >
       <div className="flex w-full flex-col items-center gap-6">
         <div className="flex min-h-[2.75rem] w-full items-center justify-center">
-          <h3 className="text-3xl md:text-4xl tracking-[0.3em] uppercase text-[var(--brand-cafe)]">
+          <h3 className="text-3xl md:text-[2.4rem] tracking-[0.28em] leading-[1.35] uppercase text-[var(--brand-cafe)]">
             {event.title}
           </h3>
         </div>
@@ -38,20 +38,20 @@ export default function SectionAgenda() {
           />
         </div>
 
-        <div className="flex h-[5.25rem] w-full items-center justify-center">
-          <p className="font-halimum text-3xl leading-tight text-[var(--brand-forest)] max-w-sm text-balance text-center">
+        <div className="flex h-[5.75rem] w-full items-center justify-center">
+          <p className="font-halimum text-3xl md:text-[2.5rem] leading-tight text-[var(--brand-forest)] max-w-sm text-balance text-center">
             {event.venueScript}
           </p>
         </div>
 
-        <div className="flex min-h-[2.75rem] w-full items-center justify-center gap-3 text-lg">
-          <LocationIcon className="w-5 h-5 text-[var(--brand-sage)]/70" />
-          <span>{event.address}</span>
+        <div className="flex min-h-[3rem] w-full items-start justify-center gap-3 text-xl md:text-[1.35rem]">
+          <LocationIcon className="mt-[6px] w-6 h-6 text-[var(--brand-sage)]/70" />
+          <span className="leading-relaxed text-center md:text-left max-w-sm">{event.address}</span>
         </div>
 
-        <div className="flex min-h-[2.5rem] w-full items-center justify-center gap-2 text-lg">
-          <ClockIcon className="w-5 h-5 text-[var(--brand-sage)]/70" />
-          <span className="tracking-wide">{event.time}</span>
+        <div className="flex min-h-[2.5rem] w-full items-center justify-center gap-2 text-xl md:text-[1.3rem]">
+          <ClockIcon className="w-6 h-6 text-[var(--brand-sage)]/70" />
+          <span className="tracking-[0.2em] uppercase">{event.time}</span>
         </div>
       </div>
 
@@ -59,7 +59,7 @@ export default function SectionAgenda() {
         href={event.mapUrl}
         target="_blank"
         rel="noreferrer"
-        className="mt-6 inline-block rounded-full border border-[var(--brand-caramel)]/40 px-6 py-2 bg-[var(--brand-cafe)] text-[var(--paper)] hover:opacity-90 hover-brand-sage shadow-[0_8px_15px_rgba(0,0,0,0.15)]"
+        className="mt-8 inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-full border border-[var(--brand-cafe)]/25 bg-[var(--brand-cafe)] px-6 py-3 text-sm sm:text-base uppercase tracking-[0.18em] text-[var(--brand-cream)] shadow-lg shadow-[var(--brand-cafe)]/20 transition-transform duration-200 hover:-translate-y-0.5 hover:bg-[var(--brand-deep)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--brand-cafe)]"
       >
         Ver ubicación
       </a>
