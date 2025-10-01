@@ -7,7 +7,7 @@ import SectionAgenda from "./components/SectionAgenda";
 import SectionGuardaLaFecha from "./components/SectionGuardaLaFecha";
 import SectionCodigoVestimenta from "./components/SectionCodigoVestimenta";
 import SectionRsvp from "./components/SectionRsvp";
-import SectionEnd from "./components/SectionEnd";
+import SectionGaleria from "./components/SectionGaleria";
 
 export default function App() {
   const [open, setOpen] = useState(false);
@@ -111,7 +111,7 @@ export default function App() {
                 ["Agenda", "#sectionAgenda"],
                 ["Código de Vestimenta", "#sectionCodigoVestimenta"],
                 ["RSVP", "#sectionRsvp"],
-                ["End", "#sectionEnd"],
+                ["Galería", "#sectionGaleria"],
               ].map(([label, href]) => (
                 <a
                   key={href}
@@ -134,7 +134,7 @@ export default function App() {
         <SectionAgenda />
         <SectionCodigoVestimenta />
         <SectionRsvp />
-        <SectionEnd />
+        <SectionGaleria />
       </main>
     </div>
   );

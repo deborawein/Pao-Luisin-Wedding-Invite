@@ -11,9 +11,10 @@ export default function SectionCodigoVestimenta() {
   return (
     <section
       id="sectionCodigoVestimenta"
-      className="relative min-h-screen snap-start bg-[var(--brand-cafe)]/75 text-[var(--paper)]"
+      className="relative min-h-screen snap-start bg-[var(--brand-cream)]/70 text-[var(--paper)]"
     >
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(63,33,17,0.38),_rgba(45,24,12,0.55)_55%,_rgba(27,15,7,0.7)_100%)]" aria-hidden />
+        <div className="absolute inset-0 -z-30 bg-[var(--brand-terra)]" />
+
 
       <div className="relative mx-auto flex min-h-screen w-full max-w-5xl flex-col items-center px-6 py-20 md:py-24 lg:py-28">
         <img

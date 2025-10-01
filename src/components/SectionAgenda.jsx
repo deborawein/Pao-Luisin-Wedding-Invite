@@ -69,8 +69,6 @@ export default function SectionAgenda() {
   return (
     <section id="sectionAgenda" className="bg-[var(--brand-cream)]/70 text-[var(--ink)]">
       <div className="relative">
-        <div aria-hidden className="absolute inset-0 -z-30 bg-[var(--brand-deep)]/35" />
-        <div aria-hidden className="absolute inset-0 -z-20 bg-[var(--brand-forest)]/35" />
 
         <div className="relative z-10 mx-auto w-full max-w-6xl px-4 py-16">
           <header className="mt-4 text-center">

@@ -4,8 +4,6 @@ export default function SectionRsvp() {
       id="sectionRsvp"
       className="relative min-h-screen snap-start bg-[var(--brand-cream)]/70 text-[var(--brand-deep)]"
     >
-      <div className="absolute inset-0 " aria-hidden />
-
       <div className="relative mx-auto flex min-h-screen w-full max-w-6xl flex-col-reverse items-center gap-14 px-6 py-20 text-center lg:flex-row lg:items-center lg:gap-18 lg:text-left">
         <div className="flex w-full flex-1 flex-col items-center gap-10 text-center lg:items-start lg:text-left">
           <header className="space-y-4">

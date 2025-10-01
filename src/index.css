@@ -2,25 +2,39 @@
 @import "tailwindcss";
 
 /* ===== Base / App frame ===== */
-html, body, #root { height: 100%; }
+html,
+body,
+#root {
+  height: 100%;
+}
+
 body {
   margin: 0;
-  overflow: hidden;            /* only your <main> should scroll */
+  overflow: hidden;
+  /* only your <main> should scroll */
 }
+
 :root {
   --nav-h: 64px;
 
   /* Brand palette */
-  --brand-deep:    #0F331C;  /* ink */
-  --brand-forest:  #1C4A2A;
-  --brand-sage:    #89A889;
-  --brand-cafe:    #7A4F28;
+  --brand-deep: #0F331C;
+  /* ink */
+  --brand-forest: #1C4A2A;
+  --brand-sage: #89A889;
+  --brand-cafe: #7A4F28;
   --brand-caramel: #BD8C57;
+  --brand-terra: #4f2709;
 
-  --brand-cream:   #F6E9C7;  /* light bg */
-  --paper:         #FFF8E9;  /* very light */
-  --ink:           #0F331C;  /* text on light */
-  --focus-ring:    #F0C987;  /* accessible outline */
+
+  --brand-cream: #F6E9C7;
+  /* light bg */
+  --paper: #FFF8E9;
+  /* very light */
+  --ink: #0F331C;
+  /* text on light */
+  --focus-ring: #F0C987;
+  /* accessible outline */
 }
 
 .focus-soft:focus-visible,
@@ -32,6 +46,7 @@ body {
 .hover-brand-sage {
   border: 1px solid transparent;
 }
+
 .hover-brand-sage:hover {
   color: var(--brand-sage);
   border-color: var(--brand-sage);
@@ -39,7 +54,9 @@ body {
 }
 
 /* Utility */
-.text-mainbeige { color: #E7E5C3; }
+.text-mainbeige {
+  color: #E7E5C3;
+}
 
 /* ===== Fixed, non-scrolling background behind the app ===== */
 .app-bg {
@@ -51,9 +68,19 @@ body {
   background-size: cover;
   pointer-events: none;
 }
+
 /* Switch image by orientation */
-@media (orientation: landscape) { .app-bg { background-image: url('/bg-desk.png'); } }
-@media (orientation: portrait)  { .app-bg { background-image: url('/bd-mobile.png'); } }
+@media (orientation: landscape) {
+  .app-bg {
+    background-image: url('/bg-desk.png');
+  }
+}
+
+@media (orientation: portrait) {
+  .app-bg {
+    background-image: url('/bd-mobile.png');
+  }
+}
 
 /* ===== Fonts ===== */
 @font-face {
@@ -64,21 +91,30 @@ body {
   font-display: swap;
   font-synthesis: none;
 }
-.font-halimum { font-family: "Halimum", cursive; }
+
+.font-halimum {
+  font-family: "Halimum", cursive;
+}
+
 .font-cinzelish {
   font-family: "Didot", "Bodoni 72", "Bodoni MT",
     "Palatino", "Palatino Linotype", "Book Antiqua",
     "Times New Roman", Times, serif;
 }
+
 .font-engraved {
   font-family: "Copperplate", "Copperplate Gothic Light",
     "Palatino", "Times New Roman", Times, serif;
 }
 
 /* ===== Itinerary layout ===== */
-.itin-wrap { padding: 2.5rem 0; }
+.itin-wrap {
+  padding: 2.5rem 0;
+}
 
-.agenda-grid { width: 100%; }
+.agenda-grid {
+  width: 100%;
+}
 
 @media (min-width: 900px) {
   .agenda-grid {
