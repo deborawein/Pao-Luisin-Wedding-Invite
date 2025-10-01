@@ -3,7 +3,6 @@ const COLOR_SWATCHES = [
   "#68D2C6",
   "#F9A2B5",
   "#B59DFF",
-  "#F5C89E",
   "#FFFFFF",
 ];
 
@@ -23,45 +22,45 @@ export default function SectionCodigoVestimenta() {
           className="h-46 w-auto object-contain drop-shadow-[0_18px_35px_rgba(33,17,5,0.4)]"
         />
 
-        <h2 className="mt-10 text-center text-3xl md:text-[2.5rem] tracking-[0.28em] text-[var(--brand-caramel)]">
+        <h2 className="mt-16 text-center text-3xl md:text-[2.5rem] tracking-[0.28em] text-[var(--brand-cafe)]">
           CÓDIGO DE VESTIMENTA
         </h2>
 
-        <div className="mt-12 flex flex-col items-center gap-4 text-center text-[6.5vw] md:text-[3.25rem] font-halimum text-[var(--paper)]/95 leading-tight">
+        <div className="mt-16 flex flex-col items-center gap-4 text-center text-[6.5vw] md:text-[3.25rem] font-halimum text-[var(--paper)] leading-tight drop-shadow-[0_3px_12px_rgba(15,51,28,0.25)]">
           <span>Formal</span>
           <span>Elegante</span>
           <span>Espectacular</span>
         </div>
 
-        <p className="mt-12 max-w-3xl text-center text-base md:text-lg tracking-[0.18em] text-[var(--paper)]/85 leading-relaxed">
+        <p className="mt-16 max-w-3xl text-center text-base md:text-lg tracking-[0.18em] text-[var(--brand-cafe)]/80 leading-relaxed drop-shadow-[0_2px_10px_rgba(15,51,28,0.2)]">
           Algunos colores se han destinado con cariño a personas únicas en nuestra historia, agradecemos no usarlos la noche del evento.
         </p>
 
-        <div className="mt-12 flex flex-col items-center gap-12">
+        <div className="mt-16 flex flex-col items-center gap-12">
           <div className="flex flex-wrap items-center justify-center gap-5 md:gap-7">
-            {COLOR_SWATCHES.slice(0, 5).map((color) => (
+            {COLOR_SWATCHES.slice(0, 4).map((color) => (
               <span
                 key={color}
                 style={{ backgroundColor: color }}
-                className="h-12 w-12 rounded-full border border-white/30 shadow-[0_8px_15px_rgba(0,0,0,0.25)]"
+                className="h-12 w-12 rounded-full border border-[var(--brand-cream)]/30 shadow-[0_8px_15px_rgba(0,0,0,0.25)]"
               />
             ))}
           </div>
 
-          <div className="flex flex-col items-center gap-5">
-            <div className="relative flex h-24 w-24 items-center justify-center rounded-[22px] border-4 border-[rgba(139,94,50,0.85)] bg-[radial-gradient(circle,_rgba(206,165,120,0.45)_0%,_rgba(170,130,85,0.55)_55%,_rgba(114,78,39,0.75)_100%)] shadow-[0_18px_35px_rgba(33,17,5,0.35)]">
-              <span className="h-12 w-12 rounded-full border border-white/60 bg-white shadow-[0_6px_12px_rgba(0,0,0,0.25)]" />
+          <div className="flex flex-col items-center gap-5 mt-6">
+            <div className="relative flex h-24 w-24 items-center justify-center  bg-[radial-gradient(circle,_rgba(240,201,135,1)_0%,_rgba(240,201,135,0)_75%)]">
+              <span className="h-12 w-12 rounded-full border border-[var(--brand-cream)]/30 bg-white shadow-[0_6px_12px_rgba(15,51,28,0.2)]" />
             </div>
 
-            <div className="flex flex-col items-center gap-3 text-center text-[6.5vw] md:text-[3rem] font-halimum text-[var(--paper)]/90 leading-tight">
+            <div className="flex flex-col items-center text-center text-[6.5vw] md:text-[3rem] font-halimum text-[var(--paper)] drop-shadow-[0_4px_14px_rgba(15,51,28,0.3)]">
               <span>El blanco</span>
-              <span>brilla sólo para</span>
+              <span>brilla para</span>
               <span>Pao</span>
             </div>
           </div>
         </div>
 
-        <div className="mt-14 grid gap-10 md:grid-cols-2 md:gap-14">
+        <div className="mt-16 grid gap-10 md:grid-cols-2 md:gap-14 backdrop-blur-xs   ">
           <DressCard
             title="Para las chicas"
             description="Se recomienda asistir con vestidos largos, conjuntos elegantes o enterizos glamorosos, acompañados de tacones o sasndalias de vestir."
@@ -74,34 +73,34 @@ export default function SectionCodigoVestimenta() {
           />
         </div>
 
-        <div className="mt-16 flex flex-col items-center gap-6 text-center">
+        <div className="mt-26 flex flex-col items-center gap-6 text-center">
           <img
             src="/vestimenta/bebidas.png"
             alt="Brindis"
             className="h-46 w-auto object-contain drop-shadow-[0_18px_35px_rgba(33,17,5,0.4)]"
           />
-          <div className="text-center">
-            <p className="text-2xl tracking-[0.28em] text-[var(--brand-caramel)]">
-              EVENTO SÓLO PARA
+          <div className="mt-6 text-center">
+            <p className="text-2xl tracking-[0.28em] text-[var(--brand-cafe)] drop-shadow-[0_2px_8px_rgba(15,51,28,0.2)]">
+              EVENTO SOLO PARA
             </p>
-            <p className="mt-4 text-[7.2vw] md:text-[3.5rem] font-halimum text-[var(--brand-cream)]/95">
+            <p className="mt-4 text-[7.2vw] md:text-[3.5rem] font-halimum text-[var(--brand-caramel)] drop-shadow-[0_4px_14px_rgba(15,51,28,0.3)]">
               Adultos
             </p>
           </div>
         </div>
 
-        <div className="mt-16 flex flex-col items-center gap-6 text-center">
+        <div className="mt-26 flex flex-col items-center gap-6 text-center">
           <img
             src="/vestimenta/regalo.png"
             alt="Ilustración de sobres"
             className="h-46 w-auto object-contain drop-shadow-[0_18px_35px_rgba(33,17,5,0.28)]"
             loading="lazy"
           />
-          <p className="text-xl md:text-[1.6rem] uppercase tracking-[0.26em] text-[var(--brand-caramel)]">
+          <p className="mt-6 text-2xl uppercase tracking-[0.28em] text-[var(--brand-cafe)] drop-shadow-[0_2px_10px_rgba(15,51,28,0.25)]">
             El mejor regalo será disfrutar con ustedes, cualquier detalle será recibido con cariño
           </p>
-          <p className="mt-4 text-[7.2vw] md:text-[3.5rem] font-halimum text-[var(--brand-cream)]/95">
-            Lluvia de sobres
+          <p className="mt-4 text-[7.2vw] md:text-[3.5rem] font-halimum text-[var(--brand-caramel)] drop-shadow-[0_4px_14px_rgba(15,51,28,0.3)]">
+            Lluvia de Sobres
           </p>
         </div>
 
@@ -112,13 +111,13 @@ export default function SectionCodigoVestimenta() {
 
 function DressCard({ title, description, image }) {
   return (
-    <div className="flex flex-col items-center gap-5 rounded-3xl bg-[rgba(41,19,8,0.55)] px-9 py-12 text-center shadow-[0_14px_30px_rgba(0,0,0,0.35)]">
+    <div className="flex flex-col items-center gap-5 rounded-3xl bg-[var(--brand-cafe)]/55 px-9 py-12 text-center shadow-[0_14px_30px_rgba(0,0,0,0.35)]">
       <img
         src={image}
         alt={title}
         className="h-32 w-auto object-contain drop-shadow-[0_12px_20px_rgba(0,0,0,0.35)]"
       />
-      <h3 className="text-xl md:text-[1.6rem] uppercase tracking-[0.26em] text-[var(--brand-caramel)]">
+      <h3 className="text-xl md:text-[1.6rem] uppercase tracking-[0.26em] text-[var(--brand-cafe)]">
         {title}
       </h3>
       <p className="text-center text-base md:text-lg text-[var(--paper)]/85 leading-relaxed max-w-sm">
