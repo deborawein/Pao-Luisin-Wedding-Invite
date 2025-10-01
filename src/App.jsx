@@ -104,7 +104,7 @@ export default function App() {
             ].join(" ")}
           >
             <div className="flex w-full max-w-md flex-col items-center space-y-4">
-              {[ 
+              {[
                 ["Inicio", "#sectionInicio"],
                 ["Guarda la Fecha", "#sectionGuardaLaFecha"],
                 ["Mensaje", "#sectionMensaje"],
@@ -130,8 +130,8 @@ export default function App() {
         {/* Sections */}
         <SectionInicio />
         <SectionGuardaLaFecha />
-        <SectionMensaje />
         <SectionAgenda />
+        <SectionMensaje />
         <SectionCodigoVestimenta />
         <SectionRsvp />
         <SectionGaleria />

@@ -93,19 +93,17 @@ export default function SectionInicio() {
                     <div className="grid grid-cols-[1fr_auto_1fr] items-center">
                         <div className="flex justify-end">
                             <span className="uppercase tracking-[0.35em] text-sm md:text-base font-light">
-                                Sabado
+                                Cúcuta
                             </span>
                         </div>
                         <div className="px-4">
                             <div className="flex items-center gap-4">
                                 <span className="h-8 w-px bg-white/70" />
-                                <span className="text-4xl md:text-5xl font-light leading-none">10</span>
-                                <span className="h-8 w-px bg-white/70" />
                             </div>
                         </div>
                         <div className="flex justify-start">
                             <span className="uppercase tracking-[0.35em] text-sm md:text-base font-light">
-                                Enero
+                                Colombia
                             </span>
                         </div>
                     </div>
