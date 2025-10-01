@@ -17,13 +17,13 @@ export default function SectionEnd() {
       <div className="relative z-10 mx-auto flex min-h-screen w-full max-w-6xl flex-col gap-12 px-6 py-20 md:py-24">
         <div className="text-center md:max-w-3xl md:text-left">
           <span className="text-xs md:text-sm uppercase tracking-[0.4em] text-[var(--brand-cafe)]/70">
-            Sesión de fotos
+            Desde Melbourne, con cariño
           </span>
           <h2 className="mt-4 font-halimum text-[12vw] leading-tight text-[var(--brand-cafe)] md:text-[4rem]">
-            Recuerdos que queremos compartir
+            Los extrañamos y contamos los días
           </h2>
           <p className="mt-4 md:mt-6 text-sm md:text-lg font-light leading-relaxed text-[var(--brand-deep)]/80">
-            Cada imagen guarda un pedacito de nuestra historia. Disfruta de este adelanto del amor y la alegría que celebraremos juntos.
+            Entre cafés, caminatas por la ciudad y recuerdos compartidos, soñamos con tenerlos cerca otra vez. Hasta que podamos abrazarlos y celebrar juntos.
           </p>
         </div>
 

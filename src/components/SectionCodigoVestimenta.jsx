@@ -63,28 +63,47 @@ export default function SectionCodigoVestimenta() {
         <div className="mt-14 grid gap-10 md:grid-cols-2 md:gap-14">
           <DressCard
             title="Para las chicas"
-            description="Vestidos largos, conjuntos elegantes o jumpsuits glamorosos en tonos cálidos, joyería sutil y tacones o sandalias de vestir."
+            description="Se recomienda asistir con vestidos largos, conjuntos elegantes o enterizos glamorosos, acompañados de tacones o sasndalias de vestir."
             image="/vestimenta/chicas.png"
           />
           <DressCard
             title="Para los chicos"
-            description="Suit o blazer con camisa de vestir, pantalón de tela y zapatos formales. Añade un toque de color con corbata o pañuelo."
+            description="Se recomienda un estilo casual con un toque sofisticado, con blazer, camisa de vestir, pantalón de tela y zapatos formales."
             image="/vestimenta/chicos.png"
           />
         </div>
 
-        <img
-          src="/vestimenta/bebidas.png"
-          alt="Brindis"
-          className="mt-16 h-46 w-auto object-contain drop-shadow-[0_18px_35px_rgba(33,17,5,0.4)]"
-        />
+        <div className="mt-16 flex flex-col items-center gap-6 text-center">
+          <img
+            src="/vestimenta/bebidas.png"
+            alt="Brindis"
+            className="h-46 w-auto object-contain drop-shadow-[0_18px_35px_rgba(33,17,5,0.4)]"
+          />
+          <div className="text-center">
+            <p className="text-2xl tracking-[0.28em] text-[var(--brand-caramel)]">
+              EVENTO SÓLO PARA
+            </p>
+            <p className="mt-4 text-[7.2vw] md:text-[3.5rem] font-halimum text-[var(--brand-cream)]/95">
+              Adultos
+            </p>
+          </div>
+        </div>
 
-        <p className="mt-16 text-center text-2xl tracking-[0.28em] text-[var(--brand-caramel)]">
-          EVENTO SÓLO PARA
-        </p>
-        <p className="mt-6 text-center text-[7.2vw] md:text-[3.5rem] font-halimum text-[var(--brand-cream)]/95">
-          Adultos
-        </p>
+        <div className="mt-16 flex flex-col items-center gap-6 text-center">
+          <img
+            src="/vestimenta/regalo.png"
+            alt="Ilustración de sobres"
+            className="h-46 w-auto object-contain drop-shadow-[0_18px_35px_rgba(33,17,5,0.28)]"
+            loading="lazy"
+          />
+          <p className="text-xl md:text-[1.6rem] uppercase tracking-[0.26em] text-[var(--brand-caramel)]">
+            El mejor regalo será disfrutar con ustedes, cualquier detalle será recibido con cariño
+          </p>
+          <p className="mt-4 text-[7.2vw] md:text-[3.5rem] font-halimum text-[var(--brand-cream)]/95">
+            Lluvia de sobres
+          </p>
+        </div>
+
       </div>
     </section>
   );

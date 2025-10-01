@@ -85,7 +85,7 @@ export default function SectionGuardaLaFecha() {
                     Sábado 10 de enero de 2026
                   </p>
                   <p className="mt-2 text-base md:text-lg italic text-[var(--brand-forest)]/70">
-                    El inicio de toda una vida juntos
+                    El inicio de toda una vida juntos con la bendición de Dios
                   </p>
                 </div>
               </div>

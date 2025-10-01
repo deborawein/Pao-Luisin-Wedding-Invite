@@ -11,13 +11,12 @@ export default function SectionRsvp() {
           <header className="space-y-4">
             <p className="text-sm md:text-base uppercase tracking-[0.32em] text-[var(--brand-forest)]/70">Confirma tu asistencia</p>
             <h2 className="text-[7vw] md:text-4xl font-halimum leading-tight text-[var(--brand-cafe)]">
-              ¡Nos encantará celebrar contigo!
+              Celebrar contigo es un regalo
             </h2>
           </header>
 
           <p className="max-w-2xl text-lg md:text-xl leading-relaxed text-[var(--brand-forest)]/85">
-            Queremos compartir risas, abrazos y un brindis lleno de cariño contigo. Tu presencia es el mejor regalo;
-            gracias por hacernos parte de tus planes.
+            Nos llena de ilusión compartir este momento tan especial contigo. Por favor, ccinfírmamos tu asistencia antes de la fecha indicada.
           </p>
 
           <div className="flex flex-col items-center gap-4 lg:items-start lg:text-left">
