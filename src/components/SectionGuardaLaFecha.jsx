@@ -2,6 +2,7 @@
 import { useCallback, useEffect, useState } from "react";
 import Photo from "/saveTheDate.jpg";
 
+
 const ICS_EVENT = [
   "BEGIN:VCALENDAR",
   "VERSION:2.0",
@@ -158,9 +159,9 @@ function Countdown({ targetISO }) {
         <Number value={left.s} width={2} colorClass="text-[var(--brand-forest)]/80" />
 
         {/* Row 2: labels under numbers */}
-        <Label text="Días"     col={1} />
-        <Label text="Horas"    col={3} />
-        <Label text="Minutos"  col={5} />
+        <Label text="Días" col={1} />
+        <Label text="Horas" col={3} />
+        <Label text="Minutos" col={5} />
         <Label text="Segundos" col={7} colorClass="text-[var(--brand-forest)]/65" />
       </div>
     </div>

@@ -52,7 +52,7 @@ export default function App() {
 
       {/* Scrollable content area */}
       <main
-        className="flex-1 overflow-y-auto scroll-smooth"
+        className="flex-1 overflow-y-auto overflow-x-hidden scroll-smooth"
         style={{ scrollbarGutter: "stable", overscrollBehaviorY: "contain" }}
       >
 
@@ -107,8 +107,8 @@ export default function App() {
               {[
                 ["Inicio", "#sectionInicio"],
                 ["Guarda la Fecha", "#sectionGuardaLaFecha"],
-                ["Mensaje", "#sectionMensaje"],
                 ["Agenda", "#sectionAgenda"],
+                ["Mensaje", "#sectionMensaje"],
                 ["Código de Vestimenta", "#sectionCodigoVestimenta"],
                 ["RSVP", "#sectionRsvp"],
                 ["Galería", "#sectionGaleria"],

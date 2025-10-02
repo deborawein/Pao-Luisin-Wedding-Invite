@@ -1,4 +1,4 @@
-const PHOTO_SOURCES = Array.from({ length: 20 }, (_, index) => ({
+const PHOTO_SOURCES = Array.from({ length: 9 }, (_, index) => ({
   src: `/slide/photo${index + 1}.jpg`,
   alt: `Sesión de fotos ${index + 1}`,
 }));
@@ -12,7 +12,7 @@ export default function SectionGaleria() {
       <div className="absolute inset-0 -z-30 bg-[var(--brand-deep)]" />
 
       <div className="relative z-10 mx-auto flex min-h-screen w-full max-w-6xl flex-col gap-12 px-6 py-20 md:py-24">
-        <div className="text-center md:max-w-3xl md:text-left">
+        <div className="text-center ">
           <span className="text-xs md:text-sm uppercase tracking-[0.4em] text-[var(--brand-cafe)]/70">
             Desde Melbourne, con cariño
           </span>
