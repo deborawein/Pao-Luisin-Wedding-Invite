@@ -63,7 +63,7 @@ export default function SectionCodigoVestimenta() {
         <div className="mt-16 grid gap-10 md:grid-cols-2 md:gap-14 backdrop-blur-xs   ">
           <DressCard
             title="Para las chicas"
-            description="Se recomienda asistir con vestidos largos, conjuntos elegantes o enterizos glamorosos, acompañados de tacones o sasndalias de vestir."
+            description="Se recomienda asistir con vestidos largos, conjuntos elegantes o enterizos glamorosos, acompañados de tacones o sandalias de vestir."
             image="/vestimenta/chicas.png"
           />
           <DressCard
