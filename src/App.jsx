@@ -8,6 +8,7 @@ import SectionGuardaLaFecha from "./components/SectionGuardaLaFecha";
 import SectionCodigoVestimenta from "./components/SectionCodigoVestimenta";
 import SectionRsvp from "./components/SectionRsvp";
 import SectionGaleria from "./components/SectionGaleria";
+import MusicToggle from "./components/MusicToggle";
 
 export default function App() {
   const [open, setOpen] = useState(false);
@@ -127,7 +128,9 @@ export default function App() {
           </div>
         </nav>
 
+
         {/* Sections */}
+        <MusicToggle src="/music/mama-linda-sample.mp3" autostart />
         <SectionInicio />
         <SectionGuardaLaFecha />
         <SectionAgenda />
@@ -135,6 +138,7 @@ export default function App() {
         <SectionCodigoVestimenta />
         <SectionRsvp />
         <SectionGaleria />
+
       </main>
     </div>
   );

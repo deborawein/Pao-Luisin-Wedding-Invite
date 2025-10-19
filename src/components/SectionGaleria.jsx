@@ -16,7 +16,7 @@ export default function SectionGaleria() {
           <span className="text-xs md:text-sm uppercase tracking-[0.4em] text-[var(--brand-cafe)]/70">
             Desde Melbourne, con cariño
           </span>
-          <h2 className="mt-4 font-halimum text-[12vw] leading-tight text-[var(--brand-cafe)] md:text-[4rem]">
+          <h2 className="mt-4 font-halimum text-[11vw] leading-tight text-[var(--brand-cafe)] md:text-[4rem]">
             Los extrañamos y contamos los días
           </h2>
           <p className="mt-4 md:mt-6 text-sm md:text-lg font-light leading-relaxed text-[var(--brand-deep)]/80">
