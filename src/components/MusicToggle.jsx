@@ -64,7 +64,7 @@ export default function MusicToggle({
               drop-shadow
             "
           >
-            Clic para escuchar
+            Tocar música
           </span>
         )}
 
