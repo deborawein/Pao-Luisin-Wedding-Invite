@@ -50,7 +50,8 @@ export default function MusicToggle({
         className="
           fixed
           bottom-[max(1rem,env(safe-area-inset-bottom))]
-          right-[max(1rem,env(safe-area-inset-right))]
+          right-[calc(env(safe-area-inset-right,0px)+1.25rem)]
+          md:right-[calc(env(safe-area-inset-right,0px)+2.25rem)]
           z-50
           size-12 rounded-full
           grid place-items-center
