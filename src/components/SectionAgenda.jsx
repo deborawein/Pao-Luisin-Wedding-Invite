@@ -8,7 +8,7 @@ export default function SectionAgenda() {
         "Av. 7 #5-54, Urb. Prados del Este,", 
         "Cúcuta, Colombia",
       ],
-      time: "16:30",
+      time: "4:30pm",
       mapUrl: "https://maps.google.com/?q=Parroquia+Santa+Mónica+Cúcuta",
     },
     {
@@ -20,7 +20,7 @@ export default function SectionAgenda() {
         "Cúcuta, Colombia",
         "(Salón Mónaco)",
       ],
-      time: "19:30",
+      time: "7:30pm",
       mapUrl: "https://maps.google.com/?q=Hotel+Casino+Internacional+Cúcuta",
     },
   ];
