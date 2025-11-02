@@ -24,7 +24,12 @@ body {
   --brand-sage: #89A889;
   --brand-cafe: #7A4F28;
   --brand-caramel: #BD8C57;
+  --brand-terra: #4f2709;
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> codex/explain-codebase-structure-and-concepts
   --brand-cream: #F6E9C7;
   /* light bg */
   --paper: #FFF8E9;
@@ -35,9 +40,26 @@ body {
   /* accessible outline */
 }
 
+<<<<<<< HEAD
 :where(a, button):focus-visible {
   outline: 3px solid var(--focus-ring);
   outline-offset: 3px;
+=======
+.focus-soft:focus-visible,
+.focus-soft:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(6px);
+}
+
+.hover-brand-sage {
+  border: 1px solid transparent;
+}
+
+.hover-brand-sage:hover {
+  color: var(--brand-sage);
+  border-color: var(--brand-sage);
+  text-decoration: none;
+>>>>>>> codex/explain-codebase-structure-and-concepts
 }
 
 /* Utility */
@@ -79,15 +101,28 @@ body {
   font-synthesis: none;
 }
 
+<<<<<<< HEAD
 @theme {
   --font-halimum: "Halimum", cursive;
   --font-cinzelish: "Didot", "Bodoni 72", "Bodoni MT",
+=======
+.font-halimum {
+  font-family: "Halimum", cursive;
+}
+
+.font-cinzelish {
+  font-family: "Didot", "Bodoni 72", "Bodoni MT",
+>>>>>>> codex/explain-codebase-structure-and-concepts
     "Palatino", "Palatino Linotype", "Book Antiqua",
     "Times New Roman", Times, serif;
-  --font-engraved: "Copperplate", "Copperplate Gothic Light",
+}
+
+.font-engraved {
+  font-family: "Copperplate", "Copperplate Gothic Light",
     "Palatino", "Times New Roman", Times, serif;
 }
 
+<<<<<<< HEAD
 /* ===== Itinerary layout (NO snap) ===== */
 
 /* Portrait: stack items naturally with comfy spacing */
@@ -120,11 +155,27 @@ body {
   }
 
   .itinerary-grid {
+=======
+/* ===== Itinerary layout ===== */
+.itin-wrap {
+  padding: 2.5rem 0;
+}
+
+.agenda-grid {
+  width: 100%;
+}
+
+@media (min-width: 900px) {
+  .agenda-grid {
+>>>>>>> codex/explain-codebase-structure-and-concepts
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     column-gap: 64px;
     row-gap: 0;
+    align-items: center;
+    justify-items: center;
   }
+<<<<<<< HEAD
 
   .itinerary-item {
     padding: 0;
@@ -134,4 +185,6 @@ body {
     align-items: center;
     justify-content: center;
   }
+=======
+>>>>>>> codex/explain-codebase-structure-and-concepts
 }
