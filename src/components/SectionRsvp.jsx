@@ -20,7 +20,7 @@ export default function SectionRsvp() {
           <div className="flex flex-col items-center gap-4">
             <p className="text-sm uppercase tracking-[0.32em] text-[var(--brand-forest)]/75 "> Confirma antes del</p>
             <p className="border border-[var(--brand-caramel)]/45 bg-[var(--brand-caramel)]/55 px-7 py-3 text-base md:text-lg font-semibold tracking-[0.22em] text-[var(--brand-cafe)] shadow-[0_10px_22px_rgba(139,94,50,0.18)]">
-              16/11/2025
+              20/11/2025
             </p>
           </div>
 

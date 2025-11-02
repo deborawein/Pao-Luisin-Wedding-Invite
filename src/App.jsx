@@ -12,6 +12,7 @@ import MusicToggle from "./components/MusicToggle";
 
 export default function App() {
   const [open, setOpen] = useState(false);
+  const currentYear = new Date().getFullYear();
 
   // Allow ESC to dismiss the menu when it's visible.
   useEffect(() => {
@@ -139,6 +140,13 @@ export default function App() {
         <SectionRsvp />
         <SectionGaleria />
 
+        <footer className="px-6 py-10 text-center text-xs uppercase tracking-[0.35em] text-[var(--paper)] bg-[var(--brand-forest)]/60 space-y-2">
+          <div>© {currentYear} <a
+            href="mailto:debiwein@gmail.com"
+            className="underline hover:opacity-80 focus-visible:outline-none focus-soft"
+            aria-label="Email Debora Weinmann"
+          >Debora Weinmann</a>. Design by Lizeth Pineda.</div>
+        </footer>
       </main>
     </div>
   );
