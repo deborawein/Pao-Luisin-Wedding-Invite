@@ -140,7 +140,7 @@ export default function App() {
         <SectionRsvp />
         <SectionGaleria />
 
-        <footer className="px-6 py-10 text-center text-xs uppercase tracking-[0.35em] text-[var(--paper)] bg-[var(--brand-forest)]/60 space-y-2">
+        <footer className="px-6 pt-10 pb-40 text-center text-xs uppercase tracking-[0.35em] text-[var(--paper)] bg-[var(--brand-forest)]/60 space-y-2">
           <div>© {currentYear} <a
             href="mailto:debiwein@gmail.com"
             className="underline hover:opacity-80 focus-visible:outline-none focus-soft"
