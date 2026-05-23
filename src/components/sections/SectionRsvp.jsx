@@ -1,7 +1,10 @@
 import PrimaryButton from "@/components/ui/PrimaryButton";
-import { RSVP_DEADLINE_LABEL, RSVP_FORM_URL } from "@/config/wedding";
+import { RSVP_FORM_URL } from "@/config/wedding";
+import { useWeddingDates } from "@/hooks/useWeddingDates";
 
 export default function SectionRsvp() {
+  const { rsvpDeadlineLabel, rsvpOpen } = useWeddingDates();
+
   return (
     <section
       id="sectionRsvp"
@@ -28,19 +31,32 @@ export default function SectionRsvp() {
               Confirma antes del
             </p>
             <p className="border border-[var(--brand-caramel)]/45 bg-[var(--brand-caramel)]/55 px-7 py-3 text-base font-semibold tracking-[0.22em] text-[var(--brand-cafe)] shadow-[0_10px_22px_rgba(139,94,50,0.18)] md:text-lg">
-              {RSVP_DEADLINE_LABEL}
+              {rsvpDeadlineLabel}
             </p>
           </div>
 
           <PrimaryButton
-            as="a"
-            href={RSVP_FORM_URL}
-            target="_blank"
-            rel="noreferrer"
+            as={rsvpOpen ? "a" : "button"}
+            href={rsvpOpen ? RSVP_FORM_URL : undefined}
+            target={rsvpOpen ? "_blank" : undefined}
+            rel={rsvpOpen ? "noreferrer" : undefined}
+            type={rsvpOpen ? undefined : "button"}
+            disabled={!rsvpOpen}
             className="mt-6"
+            aria-label={
+              rsvpOpen
+                ? "Confirmar asistencia"
+                : "Confirmación cerrada — plazo finalizado"
+            }
           >
             Confirmar asistencia
           </PrimaryButton>
+
+          {!rsvpOpen && (
+            <p className="max-w-md text-sm text-[var(--brand-forest)]/70">
+              El plazo de confirmación ha finalizado. Gracias por tu cariño.
+            </p>
+          )}
         </div>
 
         <div className="flex w-full flex-1 items-center justify-center">

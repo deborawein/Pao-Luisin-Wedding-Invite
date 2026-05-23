@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
-import { WEDDING_DATE_ISO } from "@/config/wedding";
+import { useWeddingDates } from "@/hooks/useWeddingDates";
 import { getTimeRemaining } from "@/lib/countdown";
 import { cn } from "@/lib/cn";
 
-export default function Countdown({ targetISO = WEDDING_DATE_ISO }) {
+export default function Countdown({ targetISO: targetISOProp }) {
+  const { weddingDateIso } = useWeddingDates();
+  const targetISO = targetISOProp ?? weddingDateIso;
   const [remaining, setRemaining] = useState(() => getTimeRemaining(targetISO));
 
   useEffect(() => {

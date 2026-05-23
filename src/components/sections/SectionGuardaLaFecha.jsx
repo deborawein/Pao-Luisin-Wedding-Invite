@@ -1,11 +1,13 @@
 import Countdown from "@/components/countdown/Countdown";
 import PrimaryButton from "@/components/ui/PrimaryButton";
-import { WEDDING_DATE_LABEL } from "@/config/wedding";
+import { useWeddingDates } from "@/hooks/useWeddingDates";
 import { downloadWeddingCalendar } from "@/lib/calendar";
 
 const SAVE_THE_DATE_IMAGE = "/saveTheDate.jpg";
 
 export default function SectionGuardaLaFecha() {
+  const { weddingDateLabel, weddingDateIso, icsEvent } = useWeddingDates();
+
   return (
     <section id="sectionGuardaLaFecha" className="bg-[var(--brand-cream)]/70">
       <div className="mx-auto grid max-w-6xl items-center justify-items-center gap-10 px-6 pt-16 pb-12 md:grid-cols-2 md:justify-items-stretch md:px-10 md:py-20 lg:px-12">
@@ -33,7 +35,7 @@ export default function SectionGuardaLaFecha() {
                     Guarda la fecha
                   </span>
                   <p className="mt-3 text-xl font-medium uppercase tracking-[0.28em] text-[var(--brand-cafe)] md:text-3xl">
-                    {WEDDING_DATE_LABEL}
+                    {weddingDateLabel}
                   </p>
                   <p className="mt-2 text-base italic text-[var(--brand-forest)]/70 md:text-lg">
                     El inicio de toda una vida juntos con la bendición de Dios
@@ -43,7 +45,10 @@ export default function SectionGuardaLaFecha() {
             </div>
 
             <div className="mt-8">
-              <PrimaryButton type="button" onClick={downloadWeddingCalendar}>
+              <PrimaryButton
+                type="button"
+                onClick={() => downloadWeddingCalendar(icsEvent)}
+              >
                 Añadir al calendario
               </PrimaryButton>
             </div>
@@ -69,7 +74,7 @@ export default function SectionGuardaLaFecha() {
           <h3 className="mb-3 font-halimum text-[10vw] text-[var(--brand-cafe)] md:text-5xl">
             Faltan
           </h3>
-          <Countdown />
+          <Countdown targetISO={weddingDateIso} />
         </div>
       </div>
     </section>

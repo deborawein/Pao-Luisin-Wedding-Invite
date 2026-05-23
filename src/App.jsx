@@ -11,9 +11,11 @@ import {
   SectionMensaje,
   SectionRsvp,
 } from "@/components/sections";
+import { WeddingDatesProvider } from "@/context/WeddingDatesProvider";
 
 export default function App() {
   return (
+    <WeddingDatesProvider>
     <div className="relative flex h-screen flex-col">
       <AppBackground />
 
@@ -35,5 +37,6 @@ export default function App() {
         <SiteFooter />
       </main>
     </div>
+    </WeddingDatesProvider>
   );
 }

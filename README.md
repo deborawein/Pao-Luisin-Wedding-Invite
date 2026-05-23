@@ -1,6 +1,6 @@
 # Pao & Luisi — Convite de casamento
 
-Site convite digital para a boda de **Pao & Luisi** (Cúcuta, Colombia — 10 de enero de 2026).
+Site convite digital para a boda de **Pao & Luisi** (Cúcuta, Colombia — **10/01/2026**). Versão de arquivo para portfolio: datas fixas; o botão de RSVP desativa automaticamente após o prazo (**20/11/2025**, hora de Cúcuta).
 
 **Site publicado:** [https://paoyluisi.netlify.app/](https://paoyluisi.netlify.app/)
 
@@ -54,9 +54,10 @@ npx netlify deploy --prod --dir=dist
 ```
 src/
 ├── App.jsx                 # Monta layout + seções
-├── config/                 # Textos, datas, links (edite aqui)
+├── context/                # Datas calculadas no acesso
+├── config/                 # Textos, offsets de data, links (edite aqui)
 │   ├── navigation.js       # Itens do menu
-│   ├── wedding.js          # Data, RSVP, música, carrossel
+│   ├── wedding.js          # Datas fixas, prazo RSVP, horários, música
 │   ├── agenda.js           # Cerimônia e recepção
 │   ├── gallery.js          # Fotos da galeria
 │   └── dressCode.js        # Código de vestimenta
@@ -70,7 +71,7 @@ src/
     └── MusicToggle.jsx     # Controle de música
 ```
 
-Arquivos estáticos (imagens, fontes, vídeo, `.ics`) ficam em `public/` e são servidos na raiz do site (ex.: `/fonts/`, `/music/`).
+Arquivos estáticos (imagens, fontes, vídeo) ficam em `public/`. O `.ics` do calendário é gerado no navegador ao clicar em “Añadir al calendario”.
 
 Imports usam o alias `@/` → `src/` (configurado em `vite.config.js` e `jsconfig.json`).
 
@@ -78,14 +79,21 @@ Imports usam o alias `@/` → `src/` (configurado em `vite.config.js` e `jsconfi
 
 | O que mudar | Arquivo |
 |-------------|---------|
-| Data do casamento (`WEDDING_DATE_ISO`), texto “Guarda la fecha”, horário do `.ics` (`WEDDING_EVENT_START` / `END`), RSVP, música | `src/config/wedding.js` |
-
-Ao mudar a data, rode `npm run dev` ou `npm run build` — o arquivo `public/pao-luisi-boda.ics` é regenerado automaticamente. Todos os horários usam o fuso **America/Bogota** (Cúcuta, Colombia).
+| Data do casamento | `src/config/wedding.js` → `WEDDING_DATE_ISO` |
+| Prazo RSVP (último dia inclusive) | `src/config/wedding.js` → `RSVP_DEADLINE_YMD` |
+| Horário do evento no calendário (`.ics`) | `src/config/wedding.js` → `WEDDING_EVENT_START` / `END` |
+| Música, carrossel | `src/config/wedding.js` |
 | Links do menu | `src/config/navigation.js` |
 | Locais e horários da agenda | `src/config/agenda.js` |
 | Fotos da galeria (quantidade/caminhos) | `src/config/gallery.js` |
 | Cores reservadas e textos de vestimenta | `src/config/dressCode.js` |
 | Cores e fontes globais | `src/index.css` |
+
+### RSVP (portfolio)
+
+- Data exibida: **20/11/2025** (fixa).
+- Antes do prazo, o botão abre o [formulário Tally](https://tally.so/r/3E9PV4).
+- Depois do prazo (fuso **America/Bogota**), o botão fica desativado.
 
 ## Créditos
 

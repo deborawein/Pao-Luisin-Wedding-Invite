@@ -1,14 +1,16 @@
-import { ICS_EVENT } from "@/config/wedding";
-
-export function downloadWeddingCalendar() {
+export function downloadWeddingCalendar(icsEvent) {
   if (typeof window === "undefined" || typeof navigator === "undefined") {
+    return;
+  }
+
+  if (!icsEvent) {
     return;
   }
 
   const isIOS = /iP(ad|hone|od)/i.test(navigator.userAgent);
   const isChromeIOS = /CriOS/i.test(navigator.userAgent);
 
-  const blob = new Blob([ICS_EVENT], { type: "text/calendar;charset=utf-8" });
+  const blob = new Blob([icsEvent], { type: "text/calendar;charset=utf-8" });
 
   if (isIOS) {
     const url = URL.createObjectURL(blob);
