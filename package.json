@@ -4,13 +4,13 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
+    "generate:ics": "node scripts/generate-ics.mjs",
+    "dev": "npm run generate:ics && vite",
+    "build": "npm run generate:ics && vite build",
     "lint": "eslint .",
     "preview": "vite preview"
   },
   "dependencies": {
-    "aos": "^3.0.0-beta.6",
     "react": "^19.1.1",
     "react-dom": "^19.1.1"
   },

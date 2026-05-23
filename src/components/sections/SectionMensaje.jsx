@@ -1,29 +1,10 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
+import { usePrefersReducedMotion } from "@/hooks/usePrefersReducedMotion";
 
 export default function SectionMensaje() {
   const videoRef = useRef(null);
-  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
+  const prefersReducedMotion = usePrefersReducedMotion();
 
-  // Honor the user's reduced-motion setting and stop playback if necessary.
-  useEffect(() => {
-    if (typeof window === "undefined" || !window.matchMedia) {
-      return;
-    }
-
-    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
-
-    const handleChange = (event) => {
-      const prefers = event.matches;
-      setPrefersReducedMotion(prefers);
-    };
-
-    handleChange(mediaQuery);
-    mediaQuery.addEventListener("change", handleChange);
-
-    return () => mediaQuery.removeEventListener("change", handleChange);
-  }, []);
-
-  // Respect reduced-motion preference.
   useEffect(() => {
     const video = videoRef.current;
     if (!video) {
@@ -38,7 +19,7 @@ export default function SectionMensaje() {
     const playPromise = video.play();
     if (playPromise instanceof Promise) {
       playPromise.catch(() => {
-        // ignore autoplay rejection silently
+        // Autoplay may be blocked by the browser.
       });
     }
   }, [prefersReducedMotion]);
@@ -46,9 +27,8 @@ export default function SectionMensaje() {
   return (
     <section
       id="sectionMensaje"
-      className="relative min-h-screen grid place-items-center text-[var(--brand-cream)] px-6"
+      className="relative grid min-h-screen place-items-center px-6 text-[var(--brand-cream)]"
     >
-      {/* Background video */}
       <video
         ref={videoRef}
         className="absolute inset-0 -z-10 h-full w-full object-cover"
@@ -63,19 +43,18 @@ export default function SectionMensaje() {
         tabIndex={-1}
       />
 
-      {/* Dark overlay ABOVE the video */}
       <div className="absolute inset-0 z-0 bg-[var(--brand-deep)]/55" />
 
-      {/* Centered quote ABOVE the overlay */}
       <div className="relative z-0 max-w-3xl text-center">
-        <p className="text-2xl md:text-5xl leading-relaxed font-light md:font-thin italic">
+        <p className="text-2xl font-light leading-relaxed italic md:text-5xl md:font-thin">
           “La distancia fue la prueba, <br className="hidden sm:block" />
           el amor fue la respuesta”
         </p>
 
         {prefersReducedMotion && (
           <p className="mt-4 text-sm text-[var(--brand-cream)]/80">
-            La reproducción automática está pausada porque tu dispositivo solicita reducir las animaciones.
+            La reproducción automática está pausada porque tu dispositivo
+            solicita reducir las animaciones.
           </p>
         )}
       </div>
