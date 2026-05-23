@@ -1,101 +1,101 @@
-# Pao & Luisi — Convite de casamento
+# Pao & Luisi — Wedding invite
 
-Site convite digital para a boda de **Pao & Luisi** (Cúcuta, Colombia — **10/01/2026**). Versão de arquivo para portfolio: datas fixas; o botão de RSVP desativa automaticamente após o prazo (**20/11/2025**, hora de Cúcuta).
+Digital wedding invitation for **Pao & Luisi** in Cúcuta, Colombia (**January 10, 2026**). This repo is the **portfolio archive** of the live site: fixed event dates, and the RSVP button turns off automatically after the confirmation deadline (**November 20, 2025**, Cúcuta time).
 
-**Site publicado:** [https://paoyluisi.netlify.app/](https://paoyluisi.netlify.app/)
+**Live site:** [https://paoyluisi.netlify.app/](https://paoyluisi.netlify.app/)
 
 ## Stack
 
 - [React 19](https://react.dev/) + [Vite 7](https://vite.dev/)
 - [Tailwind CSS 4](https://tailwindcss.com/)
-- Hospedagem: [Netlify](https://www.netlify.com/)
+- Hosted on [Netlify](https://www.netlify.com/)
 
-## Desenvolvimento local
+## Local development
 
-Requisitos: Node.js 18+ e npm.
+Requirements: Node.js 18+ and npm.
 
 ```bash
 npm install
 npm run dev
 ```
 
-Abre [http://localhost:5173](http://localhost:5173) no navegador.
+Open [http://localhost:5173](http://localhost:5173) in your browser.
 
-Outros comandos:
+| Command | Description |
+|--------|-------------|
+| `npm run build` | Production build to `dist/` |
+| `npm run preview` | Serve the production build locally |
+| `npm run lint` | Run ESLint |
 
-| Comando | Descrição |
-|--------|-----------|
-| `npm run build` | Gera a pasta `dist/` para produção |
-| `npm run preview` | Serve o build localmente |
-| `npm run lint` | Verifica o código com ESLint |
+## Deploy on Netlify
 
-## Deploy no Netlify
-
-O repositório inclui `netlify.toml` com:
+`netlify.toml` is configured with:
 
 - **Build:** `npm run build`
 - **Publish:** `dist`
 
-### Primeira vez
+### First-time setup
 
-1. Conecta este repositório no [Netlify](https://app.netlify.com/).
-2. Confirma que o domínio customizado aponta para o site (ex.: `paoyluisi.netlify.app`).
-3. Cada push na branch principal dispara um deploy automático.
+1. Connect this repository in the [Netlify dashboard](https://app.netlify.com/).
+2. Point your custom domain to the site (e.g. `paoyluisi.netlify.app`).
+3. Each push to the production branch triggers a deploy.
 
-### Deploy manual (CLI)
+### Manual deploy (CLI)
 
 ```bash
 npm run build
 npx netlify deploy --prod --dir=dist
 ```
 
-## Estrutura do projeto
+## Project structure
 
 ```
 src/
-├── App.jsx                 # Monta layout + seções
-├── context/                # Datas calculadas no acesso
-├── config/                 # Textos, offsets de data, links (edite aqui)
-│   ├── navigation.js       # Itens do menu
-│   ├── wedding.js          # Datas fixas, prazo RSVP, horários, música
-│   ├── agenda.js           # Cerimônia e recepção
-│   ├── gallery.js          # Fotos da galeria
-│   └── dressCode.js        # Código de vestimenta
-├── hooks/                  # Lógica reutilizável (menu, carrossel…)
-├── lib/                    # Funções auxiliares (calendário, contagem)
+├── App.jsx                 # Layout + sections
+├── context/                # Wedding dates (computed on visit)
+├── config/                 # Copy, dates, links — edit here
+│   ├── navigation.js       # Menu items
+│   ├── wedding.js          # Fixed dates, RSVP deadline, calendar times, music
+│   ├── agenda.js           # Ceremony & reception
+│   ├── gallery.js          # Gallery photos
+│   └── dressCode.js        # Dress code copy & swatches
+├── hooks/                  # Reusable logic (menu, carousel, dates…)
+├── lib/                    # Helpers (calendar .ics, countdown, formatting)
 └── components/
-    ├── layout/             # Cabeçalho, rodapé, fundo
-    ├── sections/           # Seções da página
-    ├── countdown/          # Contador “Faltan…”
-    ├── ui/                 # Botões e componentes visuais
-    └── MusicToggle.jsx     # Controle de música
+    ├── layout/             # Header, footer, background
+    ├── sections/           # Page sections
+    ├── countdown/          # “Faltan…” countdown
+    ├── ui/                 # Shared UI (buttons)
+    └── MusicToggle.jsx     # Background music control
 ```
 
-Arquivos estáticos (imagens, fontes, vídeo) ficam em `public/`. O `.ics` do calendário é gerado no navegador ao clicar em “Añadir al calendario”.
+Static assets (images, fonts, video) live in `public/`. The calendar `.ics` file is built in the browser when guests click **Añadir al calendario**.
 
-Imports usam o alias `@/` → `src/` (configurado em `vite.config.js` e `jsconfig.json`).
+Imports use the `@/` alias → `src/` (see `vite.config.js` and `jsconfig.json`).
 
-## O que editar sem mexer no layout
+## Configuration (no layout changes needed)
 
-| O que mudar | Arquivo |
-|-------------|---------|
-| Data do casamento | `src/config/wedding.js` → `WEDDING_DATE_ISO` |
-| Prazo RSVP (último dia inclusive) | `src/config/wedding.js` → `RSVP_DEADLINE_YMD` |
-| Horário do evento no calendário (`.ics`) | `src/config/wedding.js` → `WEDDING_EVENT_START` / `END` |
-| Música, carrossel | `src/config/wedding.js` |
-| Links do menu | `src/config/navigation.js` |
-| Locais e horários da agenda | `src/config/agenda.js` |
-| Fotos da galeria (quantidade/caminhos) | `src/config/gallery.js` |
-| Cores reservadas e textos de vestimenta | `src/config/dressCode.js` |
-| Cores e fontes globais | `src/index.css` |
+| What to change | File |
+|----------------|------|
+| Wedding date | `src/config/wedding.js` → `WEDDING_DATE_ISO` |
+| RSVP deadline (last day inclusive) | `src/config/wedding.js` → `RSVP_DEADLINE_YMD` |
+| Event times for calendar (`.ics`) | `src/config/wedding.js` → `WEDDING_EVENT_START` / `END` |
+| Tally RSVP URL, music, carousel | `src/config/wedding.js` |
+| Menu links | `src/config/navigation.js` |
+| Venues & schedule | `src/config/agenda.js` |
+| Gallery images | `src/config/gallery.js` |
+| Dress code | `src/config/dressCode.js` |
+| Global colors & fonts | `src/index.css` |
 
-### RSVP (portfolio)
+### RSVP behavior
 
-- Data exibida: **20/11/2025** (fixa).
-- Antes do prazo, o botão abre o [formulário Tally](https://tally.so/r/3E9PV4).
-- Depois do prazo (fuso **America/Bogota**), o botão fica desativado.
+- Displayed deadline: **November 20, 2025** (fixed).
+- **Before** the deadline: **Confirmar asistencia** opens the [Tally form](https://tally.so/r/3E9PV4) in a new tab.
+- **After** the deadline (`America/Bogota` timezone): the button is disabled and a short closed-message is shown.
 
-## Créditos
+All times and date comparisons use **Cúcuta, Colombia** (`America/Bogota`).
 
-- Desenvolvimento: [Debora Weinmann](mailto:debiwein@gmail.com)
+## Credits
+
+- Development: [Debora Weinmann](mailto:debiwein@gmail.com)
 - Design: Lizeth Pineda
